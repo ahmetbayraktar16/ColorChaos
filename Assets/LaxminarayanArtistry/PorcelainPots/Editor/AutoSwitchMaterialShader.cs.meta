@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 254cfc900b43df84dbef2933790fcc36
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 322896
+  packageName: 12 Porcelain Vessels Pack- Low Poly Flower Pots
+  packageVersion: 1.0
+  assetPath: Assets/LaxminarayanArtistry/PorcelainPots/Editor/AutoSwitchMaterialShader.cs
+  uploadId: 762905
