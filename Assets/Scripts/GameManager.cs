@@ -60,16 +60,8 @@ public class GameManager : MonoBehaviour
     
     void Update()
     {
-        if (isGameActive)
-        {
-            gameTimer += Time.deltaTime;
-            
-            if (gameTimer >= colorChangeInterval)
-            {
-                ChangeTargetColor();
-                gameTimer = 0f;
-            }
-        }
+        if (!isGameActive) return;
+        // Removed timer-based target color change
     }
     
     void InitializeGame()
@@ -188,13 +180,14 @@ public class GameManager : MonoBehaviour
             {
                 currentScore += 10;
             }
+            
+            // Change target color only after a correct click
+            ChangeTargetColor();
         }
         else
         {
             currentLives--;
             PlaySound(wrongClickSound);
-            
-            gameTimer += wrongClickPenalty;
             
             if (currentLives <= 0)
             {
@@ -204,6 +197,26 @@ public class GameManager : MonoBehaviour
         
         UpdateUI();
         Destroy(cube.gameObject);
+    }
+    
+    // Called when a cube falls off screen without being clicked
+    public void OnCubeMissed(CubeController cube)
+    {
+        if (!isGameActive) return;
+        
+        if (cube.CubeColor == targetColor)
+        {
+            currentLives--;
+            PlaySound(wrongClickSound);
+            
+            if (currentLives <= 0)
+            {
+                GameOver();
+                return;
+            }
+            
+            UpdateUI();
+        }
     }
     
     void UpdateUI()

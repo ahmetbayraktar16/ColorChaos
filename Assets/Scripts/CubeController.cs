@@ -35,9 +35,14 @@ public class CubeController : MonoBehaviour
         
         transform.Translate(Vector3.down * fallSpeed * Time.deltaTime);
         
-        if (transform.position.y < -10f)
+        if (transform.position.y < -6f)
         {
+            if (gameManager != null)
+            {
+                gameManager.OnCubeMissed(this);
+            }
             Destroy(gameObject);
+            return;
         }
         
         if (Mouse.current.leftButton.wasPressedThisFrame)

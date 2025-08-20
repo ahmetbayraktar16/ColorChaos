@@ -1,0 +1,4354 @@
+fileFormatVersion: 2
+guid: aa417a26b18a3b64fb00508a57df295c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Frerpack1_0
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 2374
+        width: 127
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ac6b05976c0213438b52373fe302118
+      internalID: -424836785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_1
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 2374
+        width: 390
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0226daea2951d944d983c28955310e81
+      internalID: 471097854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_2
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 2377
+        width: 382
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e076a440708bb1478d3a0ff7bcae1f4
+      internalID: 585413494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_3
+      rect:
+        serializedVersion: 2
+        x: 1705
+        y: 2391
+        width: 125
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e95b7b32a2d75c478c99df2a0a2cd38
+      internalID: 608032292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_4
+      rect:
+        serializedVersion: 2
+        x: 1862
+        y: 2391
+        width: 125
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bb2276a254801a47bbf73dcaee13385
+      internalID: -878008343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_5
+      rect:
+        serializedVersion: 2
+        x: 2018
+        y: 2391
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e32daee9b700ff145baf2b61816150bb
+      internalID: -1206339836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_6
+      rect:
+        serializedVersion: 2
+        x: 2177
+        y: 2391
+        width: 125
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cbec1e46f6bb2643adc3de648635d60
+      internalID: 1183033083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_7
+      rect:
+        serializedVersion: 2
+        x: 2333
+        y: 2391
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e1eb490bd64d2e4688744ad6cecaec8
+      internalID: 350755382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_8
+      rect:
+        serializedVersion: 2
+        x: 2492
+        y: 2391
+        width: 125
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a8087c20701a324d8470f5ce0675b5a
+      internalID: -1942807177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_9
+      rect:
+        serializedVersion: 2
+        x: 2737
+        y: 2391
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cbf5c7905419e34d9b8b07c343d7c59
+      internalID: 506495952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_10
+      rect:
+        serializedVersion: 2
+        x: 2894
+        y: 2391
+        width: 125
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6797a44bf6a18634d9855b845832b718
+      internalID: -1438550075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_11
+      rect:
+        serializedVersion: 2
+        x: 3050
+        y: 2391
+        width: 127
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e273614e139d2e04dac9f22d9a8d46ba
+      internalID: -965593929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_12
+      rect:
+        serializedVersion: 2
+        x: 3209
+        y: 2391
+        width: 125
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c60fc8d092f67648a3aa39217720bbe
+      internalID: -1209172864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_13
+      rect:
+        serializedVersion: 2
+        x: 3363
+        y: 2391
+        width: 127
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68fd24296340c174d9c04908e8bd7287
+      internalID: 247683663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_14
+      rect:
+        serializedVersion: 2
+        x: 3521
+        y: 2391
+        width: 125
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e804ba11be072664b8237d5d774f998f
+      internalID: -2063836675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_15
+      rect:
+        serializedVersion: 2
+        x: 3771
+        y: 2391
+        width: 126
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8da3b5a4d83cb948b1c56157bc66ce5
+      internalID: -1273162343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_16
+      rect:
+        serializedVersion: 2
+        x: 3928
+        y: 2391
+        width: 125
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f92380afa47752498fe8d360013a8a3
+      internalID: 671817351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_17
+      rect:
+        serializedVersion: 2
+        x: 4089
+        y: 2391
+        width: 125
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3058dc0e1288b854ba2dba179dc981da
+      internalID: -729193864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_18
+      rect:
+        serializedVersion: 2
+        x: 4248
+        y: 2391
+        width: 125
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2adaf312e043a6f4fa283c8c1dc084a9
+      internalID: 2122885086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_19
+      rect:
+        serializedVersion: 2
+        x: 4404
+        y: 2391
+        width: 125
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78326bda5763d2844898e2cdc6397ab2
+      internalID: 1683675846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_20
+      rect:
+        serializedVersion: 2
+        x: 4558
+        y: 2391
+        width: 125
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e1456588cf544849ad5432467e5f3ca
+      internalID: -151616677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_21
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 2191
+        width: 127
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9c7f070c011b454d900cd7212254d0f
+      internalID: 1111220600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_22
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 2191
+        width: 390
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4cfbfc36856231439dfb2af4f5e163f
+      internalID: -1846348834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_23
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 2182
+        width: 382
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c8ffa7f585010b4aa68f44daa2b09c6
+      internalID: 636424496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_24
+      rect:
+        serializedVersion: 2
+        x: 1705
+        y: 2242
+        width: 128
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f300709f564e1ae43ad2217b3adcba90
+      internalID: 64660346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_25
+      rect:
+        serializedVersion: 2
+        x: 1864
+        y: 2242
+        width: 125
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66fcb8bd4683226459f38106e0a2fff5
+      internalID: -2058795803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_26
+      rect:
+        serializedVersion: 2
+        x: 2020
+        y: 2242
+        width: 126
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d741e95e3eb214846a6bcb0a8f6660c4
+      internalID: 2142265788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_27
+      rect:
+        serializedVersion: 2
+        x: 2179
+        y: 2242
+        width: 125
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08a28304e61bc5e42982166f2ca9640d
+      internalID: 1851590774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_28
+      rect:
+        serializedVersion: 2
+        x: 2336
+        y: 2242
+        width: 125
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9b3bb456d6a35f4f8c2c7dd38b23e88
+      internalID: -1003852420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_29
+      rect:
+        serializedVersion: 2
+        x: 2492
+        y: 2242
+        width: 125
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f9c9af013503fa41ab493061b22f302
+      internalID: -1529556516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_30
+      rect:
+        serializedVersion: 2
+        x: 2737
+        y: 2242
+        width: 125
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1703663dffcac84fa1889806538160c
+      internalID: 119093703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_31
+      rect:
+        serializedVersion: 2
+        x: 2891
+        y: 2242
+        width: 125
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a9e9584e78b1d94ebae75163f68bad6
+      internalID: -1968702662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_32
+      rect:
+        serializedVersion: 2
+        x: 3050
+        y: 2242
+        width: 127
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a406e798921c054188e34885deaf446
+      internalID: 965005648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_33
+      rect:
+        serializedVersion: 2
+        x: 3209
+        y: 2242
+        width: 127
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d63e64e2cb245743af6ae55f2b03ee1
+      internalID: -1776011657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_34
+      rect:
+        serializedVersion: 2
+        x: 3363
+        y: 2242
+        width: 127
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7179c3cfe906681458448fa96e93d3f3
+      internalID: 76491458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_35
+      rect:
+        serializedVersion: 2
+        x: 3521
+        y: 2242
+        width: 128
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01341adebbf4f32458946f448e50f4f8
+      internalID: -1772300918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_36
+      rect:
+        serializedVersion: 2
+        x: 3771
+        y: 2242
+        width: 128
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbaa5cdd0599c3444a9355b6c6563cb5
+      internalID: -1762135119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_37
+      rect:
+        serializedVersion: 2
+        x: 3930
+        y: 2242
+        width: 125
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bc7a58b58976e349a10b1daab347f3f
+      internalID: 575179662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_38
+      rect:
+        serializedVersion: 2
+        x: 4089
+        y: 2242
+        width: 125
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc3b5be675303404e87b8b6380b3489b
+      internalID: -1789006774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_39
+      rect:
+        serializedVersion: 2
+        x: 4248
+        y: 2242
+        width: 125
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72663477abe2e174d8c12f19e84977a5
+      internalID: -952318898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_40
+      rect:
+        serializedVersion: 2
+        x: 4404
+        y: 2242
+        width: 125
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10a03ad77ab2a2d4188dd7a7e7926f94
+      internalID: 1150447801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_41
+      rect:
+        serializedVersion: 2
+        x: 4558
+        y: 2242
+        width: 125
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f5659674302b554f8d6f94dddaf9f8e
+      internalID: -1066373554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_42
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 1992
+        width: 127
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0d664e31bdb04a4d8b43daff27f601a
+      internalID: -632789730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_43
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 1992
+        width: 390
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f8646e58a316fe4b97696e60511f53d
+      internalID: 477832381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_44
+      rect:
+        serializedVersion: 2
+        x: 938
+        y: 1982
+        width: 382
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ee5a659cd5c8c2469a6a353ceb2c897
+      internalID: 103795390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_45
+      rect:
+        serializedVersion: 2
+        x: 1708
+        y: 2095
+        width: 125
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa20873f0248bd34e8bbff95bde861df
+      internalID: -1808207137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_46
+      rect:
+        serializedVersion: 2
+        x: 1864
+        y: 2095
+        width: 125
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdd38ee091afe484a9d7a1bfaf148caf
+      internalID: 975584002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_47
+      rect:
+        serializedVersion: 2
+        x: 2020
+        y: 2095
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5a2979ce76e42a429d66597ffc984c1
+      internalID: -1632284633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_48
+      rect:
+        serializedVersion: 2
+        x: 2177
+        y: 2095
+        width: 125
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 772231f0584ab0149a05253e4f0eba10
+      internalID: -877979673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_49
+      rect:
+        serializedVersion: 2
+        x: 2333
+        y: 2095
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 959a3624864f1964182d03b7024dd08e
+      internalID: 1981825224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_50
+      rect:
+        serializedVersion: 2
+        x: 2492
+        y: 2095
+        width: 125
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c3bb6ab13457ca428241da36e7c4df2
+      internalID: 1542754604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_51
+      rect:
+        serializedVersion: 2
+        x: 2737
+        y: 2095
+        width: 125
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19d609990458a6e4b9ea86694eceec24
+      internalID: 1392068510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_52
+      rect:
+        serializedVersion: 2
+        x: 2896
+        y: 2095
+        width: 125
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eee304ebf360e6e4aa049a73273b352f
+      internalID: -1800683839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_53
+      rect:
+        serializedVersion: 2
+        x: 3050
+        y: 2095
+        width: 127
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d40dc308ea37c34480dfe0ed9aa3222
+      internalID: 367056241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_54
+      rect:
+        serializedVersion: 2
+        x: 3206
+        y: 2095
+        width: 125
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4fe2c2992669cc4bb85ac98d0009fae
+      internalID: -1220082875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_55
+      rect:
+        serializedVersion: 2
+        x: 3363
+        y: 2095
+        width: 127
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 112b5845f77722843898db8aa8cadb01
+      internalID: -630456593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_56
+      rect:
+        serializedVersion: 2
+        x: 3524
+        y: 2095
+        width: 125
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adac3b95448f34f448840bf107e3bc47
+      internalID: -1486374558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_57
+      rect:
+        serializedVersion: 2
+        x: 3771
+        y: 2098
+        width: 126
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f7e071407150ec4786e87f6b019bad7
+      internalID: -751724643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_58
+      rect:
+        serializedVersion: 2
+        x: 3933
+        y: 2095
+        width: 125
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e2330899f8cdce49937171d7dd13363
+      internalID: 2096095162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_59
+      rect:
+        serializedVersion: 2
+        x: 4089
+        y: 2095
+        width: 125
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed927bbf4b19a6c45828ed2b10a00107
+      internalID: -729414654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_60
+      rect:
+        serializedVersion: 2
+        x: 4243
+        y: 2095
+        width: 125
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e808743a3bb0e0649a791d3b53a50134
+      internalID: 1046669309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_61
+      rect:
+        serializedVersion: 2
+        x: 4399
+        y: 2095
+        width: 125
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71b7c13f3c7601a44bb4b09159fed8c3
+      internalID: -446991271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_62
+      rect:
+        serializedVersion: 2
+        x: 4558
+        y: 2095
+        width: 125
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f83a98d0b450ed408a0855fff52078b
+      internalID: -291819998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_63
+      rect:
+        serializedVersion: 2
+        x: 1708
+        y: 1941
+        width: 125
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c639e36bdf721d24fb4713b775949437
+      internalID: -1369583523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_64
+      rect:
+        serializedVersion: 2
+        x: 1864
+        y: 1941
+        width: 128
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5911a5ba52163114180d1ae4a1d63bb8
+      internalID: -112211077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_65
+      rect:
+        serializedVersion: 2
+        x: 2023
+        y: 1941
+        width: 125
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb7105944b0eefa489f916991989a88f
+      internalID: -1425037062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_66
+      rect:
+        serializedVersion: 2
+        x: 2179
+        y: 1944
+        width: 128
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6e91074f256ad44c8dbe3167b5a03fb
+      internalID: -1817187998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_67
+      rect:
+        serializedVersion: 2
+        x: 2737
+        y: 1941
+        width: 125
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23bce1e76f706da4f92ab6ba29dd5134
+      internalID: 588266917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_68
+      rect:
+        serializedVersion: 2
+        x: 2896
+        y: 1941
+        width: 125
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d0e2062129eb4348a334d35c75bfc56
+      internalID: 1923746055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_69
+      rect:
+        serializedVersion: 2
+        x: 3052
+        y: 1941
+        width: 128
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0cf2a7138e3f3840b0c30e481c03bf8
+      internalID: 577430805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_70
+      rect:
+        serializedVersion: 2
+        x: 3211
+        y: 1941
+        width: 125
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d414cbf217312e4c80a1570abeb28eb
+      internalID: -1754059100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_71
+      rect:
+        serializedVersion: 2
+        x: 3774
+        y: 1941
+        width: 125
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d1e8bb097899a04abe920dd874c7942
+      internalID: 2050432902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_72
+      rect:
+        serializedVersion: 2
+        x: 3935
+        y: 1941
+        width: 125
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9eee8d743e2e8d4e8475d549392db95
+      internalID: 1914777869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_73
+      rect:
+        serializedVersion: 2
+        x: 4089
+        y: 1941
+        width: 127
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c577e04fa390e7b41bf9ccd58ada435a
+      internalID: 1201303115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_74
+      rect:
+        serializedVersion: 2
+        x: 4248
+        y: 1941
+        width: 125
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a84dd79428078fe4f9428bc71ad64ad1
+      internalID: -1493294670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_75
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 1819
+        width: 63
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 005cca62b854f1a47ad9ddeff9996c09
+      internalID: 1346766231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_76
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 1828
+        width: 450
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e216c4d9a738174d8a9d7dd11f67413
+      internalID: 1312476592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_77
+      rect:
+        serializedVersion: 2
+        x: 1741
+        y: 1807
+        width: 77
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1fcc3c54f02f074ebc1fdb918a689cf
+      internalID: -1361882198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_78
+      rect:
+        serializedVersion: 2
+        x: 1847
+        y: 1804
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67bee2e0d8905524b890964e383f1f0a
+      internalID: -2012781649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_79
+      rect:
+        serializedVersion: 2
+        x: 1951
+        y: 1802
+        width: 67
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a028f3351e0fccf4ab67c2d4cf1d914c
+      internalID: -2065696923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_80
+      rect:
+        serializedVersion: 2
+        x: 2044
+        y: 1807
+        width: 92
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75f03daab586451429a7d06e760ce17d
+      internalID: -2044923235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_81
+      rect:
+        serializedVersion: 2
+        x: 2162
+        y: 1804
+        width: 77
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a4b8f524695c574f946718bb62ae0d1
+      internalID: 905860945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_82
+      rect:
+        serializedVersion: 2
+        x: 2266
+        y: 1821
+        width: 74
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da0fad1806bb7fc48a888eb5866189b2
+      internalID: 879320817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_83
+      rect:
+        serializedVersion: 2
+        x: 2449
+        y: 1807
+        width: 77
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a80d53c21a516c468735723b5bf039e
+      internalID: -449206676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_84
+      rect:
+        serializedVersion: 2
+        x: 2554
+        y: 1804
+        width: 75
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24341a34bbb013e43afee4c1ee2fdd35
+      internalID: 563530520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_85
+      rect:
+        serializedVersion: 2
+        x: 2658
+        y: 1802
+        width: 65
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2a288d194fcc1a4f93d9a3e85e60b3c
+      internalID: 26597864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_86
+      rect:
+        serializedVersion: 2
+        x: 2752
+        y: 1807
+        width: 91
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33eb23213a1bcf94f8c3b0c9a9037eec
+      internalID: -1788681035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_87
+      rect:
+        serializedVersion: 2
+        x: 2869
+        y: 1804
+        width: 77
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdc02aa2872e44c449c645d5878a0480
+      internalID: 426229275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_88
+      rect:
+        serializedVersion: 2
+        x: 2973
+        y: 1821
+        width: 74
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc6b22d9797cebd48ae65158f86f867e
+      internalID: 1609210617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_89
+      rect:
+        serializedVersion: 2
+        x: 3163
+        y: 1807
+        width: 77
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ffa140eda0efd44f8cc54808240ac08
+      internalID: 1185399749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_90
+      rect:
+        serializedVersion: 2
+        x: 3269
+        y: 1804
+        width: 74
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dc3c5afbcf013e4191108e13e16520d
+      internalID: -877901099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_91
+      rect:
+        serializedVersion: 2
+        x: 3372
+        y: 1802
+        width: 65
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e58075fee5530284697e0a0c2d143073
+      internalID: -77388156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_92
+      rect:
+        serializedVersion: 2
+        x: 3466
+        y: 1807
+        width: 89
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 382d97371c90ac140899dc6d5885b7d4
+      internalID: -1996651309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_93
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 1804
+        width: 74
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66767275e1d24994fbfca5e415234f09
+      internalID: -1730995118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_94
+      rect:
+        serializedVersion: 2
+        x: 3687
+        y: 1821
+        width: 75
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f675b33ae2868c4a83997d4d22136ae
+      internalID: -717212608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_95
+      rect:
+        serializedVersion: 2
+        x: 3885
+        y: 1814
+        width: 72
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02e225cdb9f945e4aa54545f1b0ea0ff
+      internalID: 1841219808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_96
+      rect:
+        serializedVersion: 2
+        x: 3990
+        y: 1811
+        width: 70
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12516bc04a599ca47a57ee34ada86057
+      internalID: 707064688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_97
+      rect:
+        serializedVersion: 2
+        x: 4094
+        y: 1809
+        width: 60
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56d18e318cd202f4192993e8abb95e31
+      internalID: -429315378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_98
+      rect:
+        serializedVersion: 2
+        x: 4188
+        y: 1814
+        width: 84
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f507c8e3bea03aa40944436a33c3bda9
+      internalID: 1721853979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_99
+      rect:
+        serializedVersion: 2
+        x: 4305
+        y: 1811
+        width: 70
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fda90af1c845da24698fb4716af07d8e
+      internalID: 1795332135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_100
+      rect:
+        serializedVersion: 2
+        x: 4409
+        y: 1828
+        width: 67
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1995c1f50817a5843a70918ca9e37178
+      internalID: 671767368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_101
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 1766
+        width: 38
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d559d87b46ab10142a384d352bdceaf4
+      internalID: -2079645203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_102
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 1766
+        width: 382
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b842c1c72aa65e40b0943571046cc00
+      internalID: 624465638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_103
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 1766
+        width: 38
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc45044ccb2c4ee418742adc06a2c967
+      internalID: -1239118707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_104
+      rect:
+        serializedVersion: 2
+        x: 1756
+        y: 1701
+        width: 53
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65d2094101abc3746ad7d8ee704d83d8
+      internalID: -168821481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_105
+      rect:
+        serializedVersion: 2
+        x: 1859
+        y: 1696
+        width: 32
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f10cea406c015a4694c321cd616a0bf
+      internalID: -1733946994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_106
+      rect:
+        serializedVersion: 2
+        x: 1939
+        y: 1705
+        width: 72
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2872f54564498db429d3a80396a69115
+      internalID: 1118074063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_107
+      rect:
+        serializedVersion: 2
+        x: 2049
+        y: 1713
+        width: 77
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b43113d30560f544a8a2d7d648ed181
+      internalID: -2108768612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_108
+      rect:
+        serializedVersion: 2
+        x: 2155
+        y: 1715
+        width: 84
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc59ab07d20dc3949972782e4a0d933e
+      internalID: 836607911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_109
+      rect:
+        serializedVersion: 2
+        x: 2266
+        y: 1715
+        width: 82
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d47f550ee710994cb7b3ee2a09a26f6
+      internalID: -319445214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_110
+      rect:
+        serializedVersion: 2
+        x: 2463
+        y: 1701
+        width: 53
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8839d2ef9d1a9e488bab356959fa6bb
+      internalID: -646773727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_111
+      rect:
+        serializedVersion: 2
+        x: 2566
+        y: 1696
+        width: 32
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c08b02676b5237d4485eed5bd35098e0
+      internalID: -1643959469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_112
+      rect:
+        serializedVersion: 2
+        x: 2646
+        y: 1705
+        width: 72
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba10322d6b2b9924b8ac7dbcbdc30bad
+      internalID: 563442349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_113
+      rect:
+        serializedVersion: 2
+        x: 2756
+        y: 1713
+        width: 77
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92be8d4b773941e4d827e0c530e5698b
+      internalID: 1992990216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_114
+      rect:
+        serializedVersion: 2
+        x: 2862
+        y: 1715
+        width: 84
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b291049d5a4a1341a418e0d538597fa
+      internalID: 768022712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_115
+      rect:
+        serializedVersion: 2
+        x: 2971
+        y: 1715
+        width: 84
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16e1c2d40f5b8ea4583c9179f132e30a
+      internalID: 112817875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_116
+      rect:
+        serializedVersion: 2
+        x: 3177
+        y: 1701
+        width: 51
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ae208db31bc5e14ebf14f003d2230fa
+      internalID: -17638788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_117
+      rect:
+        serializedVersion: 2
+        x: 3281
+        y: 1696
+        width: 31
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bb87a0999c30014c949e2cd80193bad
+      internalID: -1199739981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_118
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 1705
+        width: 70
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30503109ad1f8754d8424cd2cbddeea4
+      internalID: -747990280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_119
+      rect:
+        serializedVersion: 2
+        x: 3468
+        y: 1713
+        width: 80
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2b1b6b75bc0aac4c9bb1b6819b62fd0
+      internalID: -1270649148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_120
+      rect:
+        serializedVersion: 2
+        x: 3577
+        y: 1715
+        width: 84
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36cb106032456c249a3e70f718801e30
+      internalID: -1984067368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_121
+      rect:
+        serializedVersion: 2
+        x: 3685
+        y: 1715
+        width: 84
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cdb168bb01b0e241bc0e8d652fcfa7d
+      internalID: -1917085496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_122
+      rect:
+        serializedVersion: 2
+        x: 3899
+        y: 1708
+        width: 46
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ab904c4d3ebbba49b55582c34c509f4
+      internalID: -1991102657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_123
+      rect:
+        serializedVersion: 2
+        x: 4002
+        y: 1727
+        width: 27
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90e7a11f01301a24e896b319f9209afe
+      internalID: -181451780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_124
+      rect:
+        serializedVersion: 2
+        x: 4082
+        y: 1713
+        width: 65
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aac43fb169fd464694479d92f3888bc
+      internalID: 1541591942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_125
+      rect:
+        serializedVersion: 2
+        x: 4192
+        y: 1720
+        width: 70
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a802ccc2d8689be4a848b26b82562ab4
+      internalID: -320765155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_126
+      rect:
+        serializedVersion: 2
+        x: 4298
+        y: 1722
+        width: 80
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 317d9094ec99717418b8be18aca45fa8
+      internalID: -1313177122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_127
+      rect:
+        serializedVersion: 2
+        x: 4406
+        y: 1722
+        width: 80
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cb099ab0580c2e49ae62f5fa21d504a
+      internalID: -619015159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_128
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 1650
+        width: 63
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 916b990b2e1793949bd84fa7bd17346e
+      internalID: 1368726785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_129
+      rect:
+        serializedVersion: 2
+        x: 4010
+        y: 1703
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d88230d3c15b4f42bd4bbefa049bb83
+      internalID: 1399124657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_130
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 1660
+        width: 450
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5b593b6c778f484f911c7134d05a679
+      internalID: -1104717672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_131
+      rect:
+        serializedVersion: 2
+        x: 1746
+        y: 1592
+        width: 58
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58cc28f0ae2f6094f84cfa0a6ec442ce
+      internalID: 522728902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_132
+      rect:
+        serializedVersion: 2
+        x: 1854
+        y: 1600
+        width: 53
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e5f735aa08845f4d902e0c6e3bf7d93
+      internalID: 176396683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_133
+      rect:
+        serializedVersion: 2
+        x: 1948
+        y: 1602
+        width: 82
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d883c983879e66f44a26a27ba2c4b1c0
+      internalID: 379119567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_134
+      rect:
+        serializedVersion: 2
+        x: 2066
+        y: 1600
+        width: 67
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39d50db24f882204a938b5582b6eb488
+      internalID: -952661205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_135
+      rect:
+        serializedVersion: 2
+        x: 2172
+        y: 1597
+        width: 60
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5af32a3f5938504088b51dd41969f59
+      internalID: -2016262206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_136
+      rect:
+        serializedVersion: 2
+        x: 2273
+        y: 1597
+        width: 77
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d63835d151bd18a4db8487a838998bb5
+      internalID: 1271568286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_137
+      rect:
+        serializedVersion: 2
+        x: 2453
+        y: 1592
+        width: 58
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b040593ee65cc8a48bc8cdb2a5faef46
+      internalID: 2120004363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_138
+      rect:
+        serializedVersion: 2
+        x: 2562
+        y: 1600
+        width: 53
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7defdd3b83adcd4459d2cd60264c4ba8
+      internalID: 1366100184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_139
+      rect:
+        serializedVersion: 2
+        x: 2655
+        y: 1602
+        width: 82
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48c3e70ed0749744892fa580334fff79
+      internalID: -2071962390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_140
+      rect:
+        serializedVersion: 2
+        x: 2771
+        y: 1600
+        width: 70
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59a1566459d9df6448de6774426f6953
+      internalID: 1524417876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_141
+      rect:
+        serializedVersion: 2
+        x: 2879
+        y: 1597
+        width: 60
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08779acd7ec2446449aaa8005b6afb5f
+      internalID: 428102742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_142
+      rect:
+        serializedVersion: 2
+        x: 2980
+        y: 1597
+        width: 77
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 938a421e768afa7429972c58262df4dd
+      internalID: 2119282314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_143
+      rect:
+        serializedVersion: 2
+        x: 3168
+        y: 1592
+        width: 55
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b91d774a1dbd67f4fa2b0a9a89690c31
+      internalID: 178242525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_144
+      rect:
+        serializedVersion: 2
+        x: 3276
+        y: 1600
+        width: 53
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d774b1034e6c55e4784e30f4b4ed335a
+      internalID: -1388663603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_145
+      rect:
+        serializedVersion: 2
+        x: 3370
+        y: 1602
+        width: 82
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f557c2c9459a77b4da4693b4b9d24242
+      internalID: 287190117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_146
+      rect:
+        serializedVersion: 2
+        x: 3485
+        y: 1600
+        width: 70
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60ae6746f81803c44975246f1162fac3
+      internalID: 990463124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_147
+      rect:
+        serializedVersion: 2
+        x: 3593
+        y: 1597
+        width: 61
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 830fa3fcdf58bad4da2efea4ef5fdfe7
+      internalID: -1746689118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_148
+      rect:
+        serializedVersion: 2
+        x: 3695
+        y: 1597
+        width: 76
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd41d69267d002841bb5ba2ffc9bf302
+      internalID: 472777608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_149
+      rect:
+        serializedVersion: 2
+        x: 3889
+        y: 1600
+        width: 51
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 815f04e3e9f681a4b833ae59a1323ddb
+      internalID: 457791291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_150
+      rect:
+        serializedVersion: 2
+        x: 3998
+        y: 1607
+        width: 48
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1278b00be5191d542aea48cc359e56a2
+      internalID: -1999010910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_151
+      rect:
+        serializedVersion: 2
+        x: 4091
+        y: 1609
+        width: 75
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d2e66af2589abb47889bc677b3f326a
+      internalID: 1045216142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_152
+      rect:
+        serializedVersion: 2
+        x: 4209
+        y: 1607
+        width: 63
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef35f378b55f5be46aa9b9f5ecbd5d15
+      internalID: 21291005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_153
+      rect:
+        serializedVersion: 2
+        x: 4315
+        y: 1604
+        width: 55
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12202b284fc0bc942921efa49c619e8d
+      internalID: 1928360034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_154
+      rect:
+        serializedVersion: 2
+        x: 4416
+        y: 1604
+        width: 72
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff5a4590e87769f49947a7bac5df0892
+      internalID: -1546232420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_155
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 1597
+        width: 39
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45d7a3f4d421f2a42a38a26963df80f7
+      internalID: 1389702877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_156
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 1597
+        width: 382
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 100c6e951c90fc345a5f1c200d87c8d9
+      internalID: 1753840501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_157
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 1597
+        width: 36
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1876911c039aeb146af517bbbd6b899c
+      internalID: 1555006056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_158
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 1501
+        width: 63
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4959bc279d4991241814139038a9dcdd
+      internalID: 1555068635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_159
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 1513
+        width: 450
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e7ccd6d1f107954f83072fb8119e626
+      internalID: -504238824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_160
+      rect:
+        serializedVersion: 2
+        x: 1749
+        y: 1499
+        width: 50
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4da943ee08c2e624cb8c42995373fac5
+      internalID: -561844707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_161
+      rect:
+        serializedVersion: 2
+        x: 1864
+        y: 1499
+        width: 51
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4291cad5d87296f4a92d6b35ecc57c34
+      internalID: 1133537629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_162
+      rect:
+        serializedVersion: 2
+        x: 1963
+        y: 1503
+        width: 69
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee3f4d95d152aaa41ab840c535b4f18a
+      internalID: -680943227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_163
+      rect:
+        serializedVersion: 2
+        x: 2073
+        y: 1506
+        width: 70
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c524a209980a0a43ac227e09dd6676d
+      internalID: 1434264394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_164
+      rect:
+        serializedVersion: 2
+        x: 2456
+        y: 1499
+        width: 50
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df2ed159cdc71124ebb5200b0d9ab0a1
+      internalID: -901249117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_165
+      rect:
+        serializedVersion: 2
+        x: 2571
+        y: 1499
+        width: 51
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06ebd8220d1a5624e86a33ec7d7315c0
+      internalID: -1462502607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_166
+      rect:
+        serializedVersion: 2
+        x: 2670
+        y: 1503
+        width: 70
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ed204f40d8bc584f806d70ac5175c4c
+      internalID: -1272200785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_167
+      rect:
+        serializedVersion: 2
+        x: 2780
+        y: 1506
+        width: 70
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8499c10ac1ad91748bf31a3a57a79c30
+      internalID: -1821630055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_168
+      rect:
+        serializedVersion: 2
+        x: 3170
+        y: 1499
+        width: 51
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7201f8ec3f337a4e9789b6e82cdd4b8
+      internalID: 44693453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_169
+      rect:
+        serializedVersion: 2
+        x: 3283
+        y: 1499
+        width: 53
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a467010b8af07f243bae91a5f472db0d
+      internalID: 1937914450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_170
+      rect:
+        serializedVersion: 2
+        x: 3384
+        y: 1503
+        width: 68
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f01b44194567d246870a63ac3fa2754
+      internalID: -1969290052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_171
+      rect:
+        serializedVersion: 2
+        x: 3495
+        y: 1506
+        width: 67
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af8d6cdf05c8e014a908312f71b6b6e8
+      internalID: -168109193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_172
+      rect:
+        serializedVersion: 2
+        x: 3892
+        y: 1506
+        width: 45
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfaab15175b509847b617edf407e7901
+      internalID: -802364468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_173
+      rect:
+        serializedVersion: 2
+        x: 4007
+        y: 1506
+        width: 46
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f6b0975d0a34464a8dbe6d1581eb2fa
+      internalID: 1632492811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_174
+      rect:
+        serializedVersion: 2
+        x: 4106
+        y: 1511
+        width: 62
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b6e8983550504748842fc9f4e97b604
+      internalID: 1442135391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_175
+      rect:
+        serializedVersion: 2
+        x: 4216
+        y: 1513
+        width: 63
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 817f46169f45d6f4eb68d1f719aea38d
+      internalID: 1787410246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_176
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 1451
+        width: 39
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f9027f8caa1c324a8c6f1f0771026a2
+      internalID: 1104155210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_177
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 1451
+        width: 382
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64ba129d68f48be489dc3341e208f1fa
+      internalID: -326570722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_178
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 1451
+        width: 36
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04b405c9c768e264daf9eaac51baef83
+      internalID: -2066721608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_179
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 407
+        width: 609
+        height: 954
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c45463a84e24034fa4163564332323b
+      internalID: -325257801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_180
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 772
+        width: 609
+        height: 585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8f124da6bce8ab448be4f6c17ffbb6b
+      internalID: -1128927151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_181
+      rect:
+        serializedVersion: 2
+        x: 1727
+        y: 407
+        width: 609
+        height: 954
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8f21a3986a88f246a6ea1d8d985216e
+      internalID: -2093993859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Frerpack1_182
+      rect:
+        serializedVersion: 2
+        x: 2396
+        y: 772
+        width: 608
+        height: 585
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23e6e1e6a154604449edc14fc3f765f8
+      internalID: -397977144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: d9e2591ac3b1508458e39e4ca193e527
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":100.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Frerpack1_0: -424836785
+      Frerpack1_1: 471097854
+      Frerpack1_10: -1438550075
+      Frerpack1_100: 671767368
+      Frerpack1_101: -2079645203
+      Frerpack1_102: 624465638
+      Frerpack1_103: -1239118707
+      Frerpack1_104: -168821481
+      Frerpack1_105: -1733946994
+      Frerpack1_106: 1118074063
+      Frerpack1_107: -2108768612
+      Frerpack1_108: 836607911
+      Frerpack1_109: -319445214
+      Frerpack1_11: -965593929
+      Frerpack1_110: -646773727
+      Frerpack1_111: -1643959469
+      Frerpack1_112: 563442349
+      Frerpack1_113: 1992990216
+      Frerpack1_114: 768022712
+      Frerpack1_115: 112817875
+      Frerpack1_116: -17638788
+      Frerpack1_117: -1199739981
+      Frerpack1_118: -747990280
+      Frerpack1_119: -1270649148
+      Frerpack1_12: -1209172864
+      Frerpack1_120: -1984067368
+      Frerpack1_121: -1917085496
+      Frerpack1_122: -1991102657
+      Frerpack1_123: -181451780
+      Frerpack1_124: 1541591942
+      Frerpack1_125: -320765155
+      Frerpack1_126: -1313177122
+      Frerpack1_127: -619015159
+      Frerpack1_128: 1368726785
+      Frerpack1_129: 1399124657
+      Frerpack1_13: 247683663
+      Frerpack1_130: -1104717672
+      Frerpack1_131: 522728902
+      Frerpack1_132: 176396683
+      Frerpack1_133: 379119567
+      Frerpack1_134: -952661205
+      Frerpack1_135: -2016262206
+      Frerpack1_136: 1271568286
+      Frerpack1_137: 2120004363
+      Frerpack1_138: 1366100184
+      Frerpack1_139: -2071962390
+      Frerpack1_14: -2063836675
+      Frerpack1_140: 1524417876
+      Frerpack1_141: 428102742
+      Frerpack1_142: 2119282314
+      Frerpack1_143: 178242525
+      Frerpack1_144: -1388663603
+      Frerpack1_145: 287190117
+      Frerpack1_146: 990463124
+      Frerpack1_147: -1746689118
+      Frerpack1_148: 472777608
+      Frerpack1_149: 457791291
+      Frerpack1_15: -1273162343
+      Frerpack1_150: -1999010910
+      Frerpack1_151: 1045216142
+      Frerpack1_152: 21291005
+      Frerpack1_153: 1928360034
+      Frerpack1_154: -1546232420
+      Frerpack1_155: 1389702877
+      Frerpack1_156: 1753840501
+      Frerpack1_157: 1555006056
+      Frerpack1_158: 1555068635
+      Frerpack1_159: -504238824
+      Frerpack1_16: 671817351
+      Frerpack1_160: -561844707
+      Frerpack1_161: 1133537629
+      Frerpack1_162: -680943227
+      Frerpack1_163: 1434264394
+      Frerpack1_164: -901249117
+      Frerpack1_165: -1462502607
+      Frerpack1_166: -1272200785
+      Frerpack1_167: -1821630055
+      Frerpack1_168: 44693453
+      Frerpack1_169: 1937914450
+      Frerpack1_17: -729193864
+      Frerpack1_170: -1969290052
+      Frerpack1_171: -168109193
+      Frerpack1_172: -802364468
+      Frerpack1_173: 1632492811
+      Frerpack1_174: 1442135391
+      Frerpack1_175: 1787410246
+      Frerpack1_176: 1104155210
+      Frerpack1_177: -326570722
+      Frerpack1_178: -2066721608
+      Frerpack1_179: -325257801
+      Frerpack1_18: 2122885086
+      Frerpack1_180: -1128927151
+      Frerpack1_181: -2093993859
+      Frerpack1_182: -397977144
+      Frerpack1_19: 1683675846
+      Frerpack1_2: 585413494
+      Frerpack1_20: -151616677
+      Frerpack1_21: 1111220600
+      Frerpack1_22: -1846348834
+      Frerpack1_23: 636424496
+      Frerpack1_24: 64660346
+      Frerpack1_25: -2058795803
+      Frerpack1_26: 2142265788
+      Frerpack1_27: 1851590774
+      Frerpack1_28: -1003852420
+      Frerpack1_29: -1529556516
+      Frerpack1_3: 608032292
+      Frerpack1_30: 119093703
+      Frerpack1_31: -1968702662
+      Frerpack1_32: 965005648
+      Frerpack1_33: -1776011657
+      Frerpack1_34: 76491458
+      Frerpack1_35: -1772300918
+      Frerpack1_36: -1762135119
+      Frerpack1_37: 575179662
+      Frerpack1_38: -1789006774
+      Frerpack1_39: -952318898
+      Frerpack1_4: -878008343
+      Frerpack1_40: 1150447801
+      Frerpack1_41: -1066373554
+      Frerpack1_42: -632789730
+      Frerpack1_43: 477832381
+      Frerpack1_44: 103795390
+      Frerpack1_45: -1808207137
+      Frerpack1_46: 975584002
+      Frerpack1_47: -1632284633
+      Frerpack1_48: -877979673
+      Frerpack1_49: 1981825224
+      Frerpack1_5: -1206339836
+      Frerpack1_50: 1542754604
+      Frerpack1_51: 1392068510
+      Frerpack1_52: -1800683839
+      Frerpack1_53: 367056241
+      Frerpack1_54: -1220082875
+      Frerpack1_55: -630456593
+      Frerpack1_56: -1486374558
+      Frerpack1_57: -751724643
+      Frerpack1_58: 2096095162
+      Frerpack1_59: -729414654
+      Frerpack1_6: 1183033083
+      Frerpack1_60: 1046669309
+      Frerpack1_61: -446991271
+      Frerpack1_62: -291819998
+      Frerpack1_63: -1369583523
+      Frerpack1_64: -112211077
+      Frerpack1_65: -1425037062
+      Frerpack1_66: -1817187998
+      Frerpack1_67: 588266917
+      Frerpack1_68: 1923746055
+      Frerpack1_69: 577430805
+      Frerpack1_7: 350755382
+      Frerpack1_70: -1754059100
+      Frerpack1_71: 2050432902
+      Frerpack1_72: 1914777869
+      Frerpack1_73: 1201303115
+      Frerpack1_74: -1493294670
+      Frerpack1_75: 1346766231
+      Frerpack1_76: 1312476592
+      Frerpack1_77: -1361882198
+      Frerpack1_78: -2012781649
+      Frerpack1_79: -2065696923
+      Frerpack1_8: -1942807177
+      Frerpack1_80: -2044923235
+      Frerpack1_81: 905860945
+      Frerpack1_82: 879320817
+      Frerpack1_83: -449206676
+      Frerpack1_84: 563530520
+      Frerpack1_85: 26597864
+      Frerpack1_86: -1788681035
+      Frerpack1_87: 426229275
+      Frerpack1_88: 1609210617
+      Frerpack1_89: 1185399749
+      Frerpack1_9: 506495952
+      Frerpack1_90: -877901099
+      Frerpack1_91: -77388156
+      Frerpack1_92: -1996651309
+      Frerpack1_93: -1730995118
+      Frerpack1_94: -717212608
+      Frerpack1_95: 1841219808
+      Frerpack1_96: 707064688
+      Frerpack1_97: -429315378
+      Frerpack1_98: 1721853979
+      Frerpack1_99: 1795332135
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
