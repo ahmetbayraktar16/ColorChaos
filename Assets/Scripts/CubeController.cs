@@ -5,17 +5,17 @@ public class CubeController : MonoBehaviour
 {
     [Header("Cube Properties")]
     public float fallSpeed = 2f;
-    public float rotationSpeed = 50f;
     public bool isGoldenCube = false;
     
     [Header("Visual Effects")]
     public ParticleSystem destroyEffect;
     public Material goldenMaterial;
+    public ParticleSystem correctClickEffect;
+    public ParticleSystem wrongClickEffect;
     
     private GameManager gameManager;
     private Color cubeColor;
     private bool isInitialized = false;
-    private bool isRotating = false;
     private Renderer cubeRenderer;
     
     public Color CubeColor => cubeColor;
@@ -123,11 +123,6 @@ public class CubeController : MonoBehaviour
         {
             MakeGoldenCube();
         }
-        
-        if (Random.Range(0f, 1f) < 0.1f)
-        {
-            isRotating = true;
-        }
     }
     
     void MakeGoldenCube()
@@ -162,18 +157,85 @@ public class CubeController : MonoBehaviour
         }
     }
     
-    public Color GetCubeColor()
+    public void PlayEffectCorrect()
     {
-        return cubeColor;
+        SpawnEffect(correctClickEffect, cubeColor);
     }
     
-    void OnDestroy()
+    public void PlayEffectWrong()
+    {
+        SpawnEffect(wrongClickEffect, Color.red);
+    }
+    
+    void SpawnEffect(ParticleSystem effectPrefab, Color tint)
+    {
+        if (effectPrefab == null) return;
+        
+        Vector3 spawnPos = transform.position;
+        
+        // Ensure effect spawns within screen bounds
+        spawnPos.x = Mathf.Clamp(spawnPos.x, -4f, 4f);
+        spawnPos.y = Mathf.Clamp(spawnPos.y, -4f, 4f);
+        
+        var effect = Instantiate(effectPrefab, spawnPos, Quaternion.identity);
+        
+        // Scale down the effect to match cube size
+        effect.transform.localScale = Vector3.one * 0.5f;
+        
+        var main = effect.main;
+        main.startColor = tint;
+        main.startSize = 0.3f; // Reduce particle size
+        
+        effect.Play();
+        Destroy(effect.gameObject, 2f);
+    }
+    
+    void SpawnEffectAt(ParticleSystem effectPrefab, Vector3 position, Color tint)
+    {
+        if (effectPrefab == null) return;
+        
+        // Ensure effect spawns within screen bounds
+        position.x = Mathf.Clamp(position.x, -4f, 4f);
+        position.y = Mathf.Clamp(position.y, -4f, 4f);
+        
+        var effect = Instantiate(effectPrefab, position, Quaternion.identity);
+        
+        // Scale down the effect to match cube size
+        effect.transform.localScale = Vector3.one * 0.5f;
+        
+        var main = effect.main;
+        main.startColor = tint;
+        main.startSize = 0.3f; // Reduce particle size
+        
+        effect.Play();
+        Destroy(effect.gameObject, 2f);
+    }
+    
+    public void PlayDestroyEffect()
     {
         if (destroyEffect != null)
         {
-            ParticleSystem effect = Instantiate(destroyEffect, transform.position, Quaternion.identity);
+            Vector3 spawnPos = transform.position;
+            
+            // Ensure effect spawns within screen bounds
+            spawnPos.x = Mathf.Clamp(spawnPos.x, -4f, 4f);
+            spawnPos.y = Mathf.Clamp(spawnPos.y, -4f, 4f);
+            
+            ParticleSystem effect = Instantiate(destroyEffect, spawnPos, Quaternion.identity);
+            
+            // Scale down the effect to match cube size
+            effect.transform.localScale = Vector3.one * 0.5f;
+            
+            var main = effect.main;
+            main.startSize = 0.3f;
+            
             effect.Play();
             Destroy(effect.gameObject, 2f);
         }
+    }
+
+    public Color GetCubeColor()
+    {
+        return cubeColor;
     }
 }

@@ -6,6 +6,10 @@ using System.Collections;
 
 public class UIManager : MonoBehaviour
 {
+    [Header("Audio")]
+    public AudioSource backgroundMusicSource;
+    public AudioSource sfxAudioSource;
+    
     [Header("Menu Panels")]
     public GameObject mainMenuPanel;
     public GameObject gamePanel;
@@ -27,6 +31,7 @@ public class UIManager : MonoBehaviour
     [Header("Heart System")]
     public GameObject heartPrefab;
     public RectTransform heartsParent;
+    public ParticleSystem lifeLossEffect;
     public bool use3DHearts = true;
     public Vector3 heartScale = new Vector3(0.4f, 0.4f, 0.4f);
     public float heartSpacing = 80f;
@@ -60,6 +65,17 @@ public class UIManager : MonoBehaviour
         SetupUI();
         ShowMainMenu();
         UpdateHeartsDisplay(maxHearts);
+        
+        // Debug audio sources
+        Debug.Log($"backgroundMusicSource: {(backgroundMusicSource != null ? "Assigned" : "NULL")}");
+        if (backgroundMusicSource != null)
+        {
+            Debug.Log($"backgroundMusicSource.clip: {(backgroundMusicSource.clip != null ? backgroundMusicSource.clip.name : "NULL")}");
+            Debug.Log($"backgroundMusicSource.volume: {backgroundMusicSource.volume}");
+        }
+        
+        // Start background music at the beginning
+        StartBackgroundMusic();
     }
     
     void SetupUI()
@@ -110,12 +126,14 @@ public class UIManager : MonoBehaviour
     public void ShowMainMenu()
     {
         SetActivePanel(mainMenuPanel);
+        StartBackgroundMusic();
     }
     
     public void StartGame()
     {
         SetActivePanel(gamePanel);
         UpdateHeartsDisplay(maxHearts);
+        StartBackgroundMusic();
         
         if (gameManager != null)
         {
@@ -127,38 +145,61 @@ public class UIManager : MonoBehaviour
     {
         SetActivePanel(gamePanel);
         UpdateHeartsDisplay(maxHearts);
+        StartBackgroundMusic();
     }
     
     public void ShowGameOver(int finalScore)
     {
-        SetActivePanel(gameOverPanel);
-        if (finalScoreText != null)
-            finalScoreText.text = "Son Puan: " + finalScore.ToString();
+        // Pause background music during game over
+        PauseBackgroundMusic();
         
-        int highScore = PlayerPrefs.GetInt("HighScore", 0);
-        if (finalScore > highScore)
+        // Hide all panels first
+        if (mainMenuPanel != null) mainMenuPanel.SetActive(false);
+        if (gamePanel != null) gamePanel.SetActive(false);
+        if (settingsPanel != null) settingsPanel.SetActive(false);
+        if (scorePanel != null) scorePanel.SetActive(false);
+        
+        // Show only game over panel
+        if (gameOverPanel != null)
         {
-            highScore = finalScore;
-            PlayerPrefs.SetInt("HighScore", highScore);
+            gameOverPanel.SetActive(true);
+            
+            if (finalScoreText != null)
+            {
+                finalScoreText.text = "Final Score: " + finalScore.ToString();
+            }
         }
+    }
+    
+    public void PlayLifeLossEffect()
+    {
+        if (lifeLossEffect == null) return;
         
-        if (highScoreText != null)
-            highScoreText.text = "En Yüksek: " + highScore.ToString();
+        Vector3 effectPosition = new Vector3(0f, 2f, 0f);
         
-        if (targetColorText != null)
-            targetColorText.text = "";
+        ParticleSystem effect = Instantiate(lifeLossEffect, effectPosition, Quaternion.identity);
+        
+        effect.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        
+        var main = effect.main;
+        main.startSize = 0.2f;
+        
+        effect.Play();
+        Destroy(effect.gameObject, 2f);
     }
     
     public void ShowSettings()
     {
         SetActivePanel(settingsPanel);
         LoadSettings();
+        // Keep music playing in settings
     }
     
     public void ShowScore()
     {
         SetActivePanel(scorePanel);
         LoadScoreData();
+        // Keep music playing in score panel
     }
     
     void SetActivePanel(GameObject activePanel)
@@ -178,9 +219,34 @@ public class UIManager : MonoBehaviour
             scoreText.text = "Puan: " + score.ToString();
         
         if (targetColorText != null)
+        {
             targetColorText.text = targetColor;
+            
+            // Set text color based on target color
+            if (!string.IsNullOrEmpty(targetColor))
+            {
+                Color textColor = GetColorFromName(targetColor);
+                targetColorText.color = textColor;
+            }
+        }
         
         UpdateHeartsDisplay(lives);
+    }
+    
+    Color GetColorFromName(string colorName)
+    {
+        switch (colorName.ToUpper())
+        {
+            case "KIRMIZI": return Color.red;
+            case "MAVİ": return Color.blue;
+            case "YEŞİL": return Color.green;
+            case "PEMBE": return new Color(1f, 0.2f, 0.6f);
+            case "MOR": return new Color(0.6f, 0f, 0.8f);
+            case "TURUNCU": return new Color(1f, 0.5f, 0f);
+            case "SARİ": return Color.yellow;
+            case "KAHVERENGİ": return new Color(0.4f, 0.2f, 0f);
+            default: return Color.white;
+        }
     }
     
     public void UpdateHeartsDisplay(int currentLives)
@@ -279,17 +345,100 @@ public class UIManager : MonoBehaviour
         
         if (vibrationToggle != null)
             vibrationToggle.isOn = PlayerPrefs.GetInt("Vibration", 1) == 1;
+            
+        // Apply loaded settings
+        ApplyAudioSettings();
+    }
+    
+    void ApplyAudioSettings()
+    {
+        float musicVolume = PlayerPrefs.GetFloat("MusicVolume", 1f);
+        float sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
+        
+        if (backgroundMusicSource != null)
+            backgroundMusicSource.volume = musicVolume;
+            
+        if (sfxAudioSource != null)
+            sfxAudioSource.volume = sfxVolume;
     }
     
     void OnMusicVolumeChanged(float value)
     {
         PlayerPrefs.SetFloat("MusicVolume", value);
-        AudioListener.volume = value;
+        
+        if (backgroundMusicSource != null)
+            backgroundMusicSource.volume = value;
     }
     
     void OnSFXVolumeChanged(float value)
     {
         PlayerPrefs.SetFloat("SFXVolume", value);
+        
+        if (sfxAudioSource != null)
+            sfxAudioSource.volume = value;
+    }
+    
+    public void StartBackgroundMusic()
+    {
+        Debug.Log("StartBackgroundMusic called");
+        
+        if (backgroundMusicSource == null)
+        {
+            Debug.LogError("backgroundMusicSource is null! Please assign it in the inspector.");
+            return;
+        }
+        
+        if (backgroundMusicSource.clip == null)
+        {
+            Debug.LogError("backgroundMusicSource.clip is null! Please assign an audio clip.");
+            return;
+        }
+        
+        if (!backgroundMusicSource.isPlaying)
+        {
+            // Resume from saved position or start from beginning
+            float savedTime = PlayerPrefs.GetFloat("MusicTime", 0f);
+            Debug.Log($"Starting music from time: {savedTime}");
+            
+            backgroundMusicSource.time = savedTime;
+            backgroundMusicSource.Play();
+            
+            Debug.Log($"Music started. Is playing: {backgroundMusicSource.isPlaying}, Volume: {backgroundMusicSource.volume}");
+        }
+        else
+        {
+            Debug.Log("Music is already playing");
+        }
+    }
+    
+    public void PauseBackgroundMusic()
+    {
+        if (backgroundMusicSource != null && backgroundMusicSource.isPlaying)
+        {
+            // Save current position before pausing
+            PlayerPrefs.SetFloat("MusicTime", backgroundMusicSource.time);
+            backgroundMusicSource.Pause();
+        }
+    }
+    
+    public void StopBackgroundMusic()
+    {
+        if (backgroundMusicSource != null)
+        {
+            // Save current position before stopping
+            PlayerPrefs.SetFloat("MusicTime", backgroundMusicSource.time);
+            backgroundMusicSource.Stop();
+        }
+    }
+    
+    public void ResumeBackgroundMusic()
+    {
+        if (backgroundMusicSource != null)
+        {
+            float savedTime = PlayerPrefs.GetFloat("MusicTime", 0f);
+            backgroundMusicSource.time = savedTime;
+            backgroundMusicSource.Play();
+        }
     }
     
     void OnVibrationChanged(bool enabled)
@@ -303,9 +452,13 @@ public class UIManager : MonoBehaviour
         if (sfxSlider != null) sfxSlider.value = 1f;
         if (vibrationToggle != null) vibrationToggle.isOn = true;
         
-        OnMusicVolumeChanged(1f);
-        OnSFXVolumeChanged(1f);
-        OnVibrationChanged(true);
+        // Reset PlayerPrefs
+        PlayerPrefs.SetFloat("MusicVolume", 1f);
+        PlayerPrefs.SetFloat("SFXVolume", 1f);
+        PlayerPrefs.SetInt("Vibration", 1);
+        
+        // Apply reset settings immediately
+        ApplyAudioSettings();
     }
     
     void LoadScoreData()

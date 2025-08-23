@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using TMPro;
+using System.Collections.Generic; // Added for List
 
 public class GameManager : MonoBehaviour
 {
@@ -29,21 +30,21 @@ public class GameManager : MonoBehaviour
     private int currentLives;
     private Color targetColor;
     private bool isGameActive = false;
-    private float gameTimer = 0f;
     
     private Color[] availableColors = {
-        new Color(1f, 0.32f, 0.32f),
-        new Color(0.26f, 0.52f, 0.95f),
-        new Color(0.20f, 0.66f, 0.33f),
-        new Color(1f, 0.41f, 0.71f),
-        new Color(0.58f, 0.29f, 0.58f),
-        new Color(1f, 0.65f, 0f),
-        new Color(1f, 1f, 0f),
-        new Color(0.5f, 0.25f, 0f)
+        new Color(1f, 0f, 0f),     
+        new Color(0f, 0.4f, 1f),   
+        new Color(0f, 0.7f, 0.2f),
+        new Color(1f, 0.2f, 0.6f),
+        new Color(0.6f, 0f, 0.8f),
+        new Color(1f, 0.5f, 0f),
+        new Color(1f, 1f, 0f),    
+        new Color(0.4f, 0.2f, 0f)
     };
+
     
     private string[] colorNames = { 
-        "KIRMIZI", "MAVİ", "YEŞİL", "PEMBE", "MOR", 
+        "KIRMIZI", "MAVİ", "YEŞİL", "PEMBE", "MOR",
         "TURUNCU", "SARİ", "KAHVERENGİ"
     };
     
@@ -61,7 +62,6 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if (!isGameActive) return;
-        // Removed timer-based target color change
     }
     
     void InitializeGame()
@@ -69,7 +69,6 @@ public class GameManager : MonoBehaviour
         currentScore = 0;
         currentLives = maxLives;
         isGameActive = true;
-        gameTimer = 0f;
         
         UpdateUI();
         ChangeTargetColor();
@@ -117,10 +116,9 @@ public class GameManager : MonoBehaviour
     
     Vector3 GetSafeSpawnPosition()
     {
-        float minX = -2.1f;
-        float maxX = 2.1f;
+        float minX = -1.8f;
+        float maxX = 1.8f;
         float spawnY = Random.Range(5f, 8f);
-        float minDistance = 2.5f;
         
         GameObject[] existingCubes = GameObject.FindGameObjectsWithTag("Cube");
         
@@ -130,22 +128,37 @@ public class GameManager : MonoBehaviour
             return new Vector3(centerX, spawnY, 0f);
         }
         
-        for (int attempt = 0; attempt < 20; attempt++)
+        // Create a grid of possible spawn positions
+        List<Vector3> possiblePositions = new List<Vector3>();
+        
+        for (float x = minX; x <= maxX; x += 1.2f) // 1.2f spacing between positions
         {
-            float randomX = Random.Range(minX, maxX);
-            float randomY = Random.Range(5f, 8f);
-            Vector3 testPosition = new Vector3(randomX, randomY, 0f);
-            
+            for (float y = 5f; y <= 8f; y += 1.5f) // 1.5f vertical spacing
+            {
+                possiblePositions.Add(new Vector3(x, y, 0f));
+            }
+        }
+        
+        // Shuffle the positions
+        for (int i = 0; i < possiblePositions.Count; i++)
+        {
+            Vector3 temp = possiblePositions[i];
+            int randomIndex = Random.Range(i, possiblePositions.Count);
+            possiblePositions[i] = possiblePositions[randomIndex];
+            possiblePositions[randomIndex] = temp;
+        }
+        
+        // Check each position for safety
+        foreach (Vector3 testPosition in possiblePositions)
+        {
             bool isSafe = true;
             
             foreach (GameObject existingCube in existingCubes)
             {
                 if (existingCube != null)
                 {
-                    float distanceX = Mathf.Abs(existingCube.transform.position.x - testPosition.x);
-                    float distanceY = Mathf.Abs(existingCube.transform.position.y - testPosition.y);
-                    
-                    if (distanceX < minDistance || distanceY < 1.5f)
+                    float distance = Vector3.Distance(existingCube.transform.position, testPosition);
+                    if (distance < 2.0f) // Minimum 2.0f distance between cubes
                     {
                         isSafe = false;
                         break;
@@ -159,7 +172,39 @@ public class GameManager : MonoBehaviour
             }
         }
         
-        return new Vector3(Random.Range(minX, maxX), Random.Range(5f, 8f), 0f);
+        // If no safe position found, try to find one with minimal overlap
+        float bestX = Random.Range(minX, maxX);
+        float bestY = Random.Range(5f, 8f);
+        float minOverlap = float.MaxValue;
+        
+        for (int attempt = 0; attempt < 50; attempt++)
+        {
+            float testX = Random.Range(minX, maxX);
+            float testY = Random.Range(5f, 8f);
+            Vector3 testPos = new Vector3(testX, testY, 0f);
+            
+            float totalOverlap = 0f;
+            foreach (GameObject existingCube in existingCubes)
+            {
+                if (existingCube != null)
+                {
+                    float distance = Vector3.Distance(existingCube.transform.position, testPos);
+                    if (distance < 2.0f)
+                    {
+                        totalOverlap += (2.0f - distance);
+                    }
+                }
+            }
+            
+            if (totalOverlap < minOverlap)
+            {
+                minOverlap = totalOverlap;
+                bestX = testX;
+                bestY = testY;
+            }
+        }
+        
+        return new Vector3(bestX, bestY, 0f);
     }
     
     Color GetRandomColor()
@@ -175,19 +220,25 @@ public class GameManager : MonoBehaviour
         {
             currentScore += 5;
             PlaySound(correctClickSound);
+            cube.PlayEffectCorrect();
             
             if (cube.isGoldenCube)
             {
                 currentScore += 10;
             }
-            
-            // Change target color only after a correct click
+
             ChangeTargetColor();
         }
         else
         {
             currentLives--;
             PlaySound(wrongClickSound);
+            cube.PlayEffectWrong();
+            
+            if (uiManager != null)
+            {
+                uiManager.PlayLifeLossEffect();
+            }
             
             if (currentLives <= 0)
             {
@@ -195,11 +246,11 @@ public class GameManager : MonoBehaviour
             }
         }
         
+        cube.PlayDestroyEffect();
         UpdateUI();
         Destroy(cube.gameObject);
     }
     
-    // Called when a cube falls off screen without being clicked
     public void OnCubeMissed(CubeController cube)
     {
         if (!isGameActive) return;
@@ -208,6 +259,11 @@ public class GameManager : MonoBehaviour
         {
             currentLives--;
             PlaySound(wrongClickSound);
+            
+            if (uiManager != null)
+            {
+                uiManager.PlayLifeLossEffect();
+            }
             
             if (currentLives <= 0)
             {
@@ -236,6 +292,7 @@ public class GameManager : MonoBehaviour
                 }
             }
             
+        
             uiManager.UpdateGameUI(currentScore, currentLives, targetColorName);
         }
     }

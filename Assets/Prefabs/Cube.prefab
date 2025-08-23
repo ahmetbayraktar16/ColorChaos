@@ -122,7 +122,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fallSpeed: 3
-  rotationSpeed: 50
   isGoldenCube: 0
-  destroyEffect: {fileID: 0}
-  goldenMaterial: {fileID: 0}
+  destroyEffect: {fileID: 9157105887693468085, guid: c4f829cb7dd4b864caf8832ec5b1ee55, type: 3}
+  goldenMaterial: {fileID: 2100000, guid: f7e9fd5a3cd3e514cbc840b0b49808d1, type: 2}
+  correctClickEffect: {fileID: 5112403345868107899, guid: 6f34ef0d986e9db4199cf75805f79753, type: 3}
+  wrongClickEffect: {fileID: 4593184484909914550, guid: 2e1e9506f5904a64b81744324fb7cd50, type: 3}

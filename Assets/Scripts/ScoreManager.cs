@@ -27,21 +27,17 @@ public class ScoreManager : MonoBehaviour
     
     public void RecordScore(int score)
     {
-        // Update high score
         int currentHighScore = GetHighScore();
         if (score > currentHighScore)
         {
             PlayerPrefs.SetInt(KeyHighScore, score);
         }
         
-        // Update last score
         PlayerPrefs.SetInt(KeyLastScore, score);
         
-        // Update total games
         int totalGames = GetTotalGames() + 1;
         PlayerPrefs.SetInt(KeyTotalGames, totalGames);
         
-        // Add to recent scores
         AddToRecentScores(score);
         
         PlayerPrefs.Save();
@@ -79,7 +75,6 @@ public class ScoreManager : MonoBehaviour
         List<int> recentScores = GetRecentScores();
         recentScores.Insert(0, newScore);
         
-        // Keep only the most recent scores
         if (recentScores.Count > MaxRecentScores)
         {
             recentScores = recentScores.Take(MaxRecentScores).ToList();
