@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
     [Header("Audio")]
     public AudioSource backgroundMusicSource;
     public AudioSource sfxAudioSource;
+    public AudioClip buttonClickSound;
+    public AudioClip panelSwitchSound;
     
     [Header("Menu Panels")]
     public GameObject mainMenuPanel;
@@ -26,7 +28,6 @@ public class UIManager : MonoBehaviour
     [Header("Game UI")]
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI targetColorText;
-    public TextMeshProUGUI levelText;
     
     [Header("Heart System")]
     public GameObject heartPrefab;
@@ -125,12 +126,14 @@ public class UIManager : MonoBehaviour
     
     public void ShowMainMenu()
     {
+        PlayButtonClickSound();
         SetActivePanel(mainMenuPanel);
         StartBackgroundMusic();
     }
     
     public void StartGame()
     {
+        PlayButtonClickSound();
         SetActivePanel(gamePanel);
         UpdateHeartsDisplay(maxHearts);
         StartBackgroundMusic();
@@ -143,6 +146,7 @@ public class UIManager : MonoBehaviour
     
     public void ShowGamePanel()
     {
+        PlayButtonClickSound();
         SetActivePanel(gamePanel);
         UpdateHeartsDisplay(maxHearts);
         StartBackgroundMusic();
@@ -190,6 +194,7 @@ public class UIManager : MonoBehaviour
     
     public void ShowSettings()
     {
+        PlayButtonClickSound();
         SetActivePanel(settingsPanel);
         LoadSettings();
         // Keep music playing in settings
@@ -197,6 +202,7 @@ public class UIManager : MonoBehaviour
     
     public void ShowScore()
     {
+        PlayButtonClickSound();
         SetActivePanel(scorePanel);
         LoadScoreData();
         // Keep music playing in score panel
@@ -238,13 +244,14 @@ public class UIManager : MonoBehaviour
         switch (colorName.ToUpper())
         {
             case "KIRMIZI": return Color.red;
-            case "MAVİ": return Color.blue;
+            case "MAVİ": return new Color(0f, 0.4f, 1f); // Bright blue like the cube
             case "YEŞİL": return Color.green;
             case "PEMBE": return new Color(1f, 0.2f, 0.6f);
             case "MOR": return new Color(0.6f, 0f, 0.8f);
             case "TURUNCU": return new Color(1f, 0.5f, 0f);
             case "SARİ": return Color.yellow;
             case "KAHVERENGİ": return new Color(0.4f, 0.2f, 0f);
+            case "ALTIN KÜPE TIKLA": return new Color(1f, 0.8f, 0f); // Golden color for the instruction
             default: return Color.white;
         }
     }
@@ -309,6 +316,7 @@ public class UIManager : MonoBehaviour
     
     public void RestartGame()
     {
+        PlayButtonClickSound();
         if (gameManager != null)
         {
             gameManager.RestartGame();
@@ -323,6 +331,7 @@ public class UIManager : MonoBehaviour
     
     public void QuitGame()
     {
+        PlayButtonClickSound();
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
         #else
@@ -332,6 +341,7 @@ public class UIManager : MonoBehaviour
     
     public void ShareScore()
     {
+        PlayButtonClickSound();
         Debug.Log("Share Score");
     }
     
@@ -441,6 +451,29 @@ public class UIManager : MonoBehaviour
         }
     }
     
+    public void PlayUISound(AudioClip clip)
+    {
+        if (sfxAudioSource != null && clip != null)
+        {
+            // Get current SFX volume from PlayerPrefs
+            float sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
+            sfxAudioSource.volume = sfxVolume;
+            
+            // Play the sound
+            sfxAudioSource.PlayOneShot(clip);
+        }
+    }
+    
+    public void PlayButtonClickSound()
+    {
+        PlayUISound(buttonClickSound);
+    }
+    
+    public void PlayPanelSwitchSound()
+    {
+        PlayUISound(panelSwitchSound);
+    }
+    
     void OnVibrationChanged(bool enabled)
     {
         PlayerPrefs.SetInt("Vibration", enabled ? 1 : 0);
@@ -448,6 +481,7 @@ public class UIManager : MonoBehaviour
     
     public void ResetSettings()
     {
+        PlayButtonClickSound();
         if (musicSlider != null) musicSlider.value = 1f;
         if (sfxSlider != null) sfxSlider.value = 1f;
         if (vibrationToggle != null) vibrationToggle.isOn = true;
@@ -475,6 +509,7 @@ public class UIManager : MonoBehaviour
     
     public void ResetProgress()
     {
+        PlayButtonClickSound();
         PlayerPrefs.DeleteKey("HighScore");
         PlayerPrefs.DeleteKey("LastScore");
         LoadScoreData();

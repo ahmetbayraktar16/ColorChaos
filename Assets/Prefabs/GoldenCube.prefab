@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3377224837340920333
+--- !u!1001 &1722686024737944975
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -50,10 +50,72 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0065e2b6a8e258e489a7c81211735da0, type: 3}
       propertyPath: m_Name
-      value: Coin4
+      value: GoldenCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 65702495048144492, guid: 0065e2b6a8e258e489a7c81211735da0, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0065e2b6a8e258e489a7c81211735da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8202714076705715032}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0065e2b6a8e258e489a7c81211735da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3696916675763472908}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0065e2b6a8e258e489a7c81211735da0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7117425818471846730}
   m_SourcePrefab: {fileID: 100100000, guid: 0065e2b6a8e258e489a7c81211735da0, type: 3}
+--- !u!1 &1957196797256779998 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0065e2b6a8e258e489a7c81211735da0, type: 3}
+  m_PrefabInstance: {fileID: 1722686024737944975}
+  m_PrefabAsset: {fileID: 0}
+--- !u!33 &8202714076705715032
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957196797256779998}
+  m_Mesh: {fileID: 4300004, guid: 9e1cb89bae143d046bb9dba32b57bed0, type: 3}
+--- !u!65 &-3696916675763472908
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957196797256779998}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7117425818471846730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957196797256779998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88257f4102d6fee44913c5828bd036a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallSpeed: 3
+  isGoldenCube: 0
+  destroyEffect: {fileID: 9157105887693468085, guid: c4f829cb7dd4b864caf8832ec5b1ee55, type: 3}
+  goldenMaterial: {fileID: 2100000, guid: f7e9fd5a3cd3e514cbc840b0b49808d1, type: 2}
+  correctClickEffect: {fileID: 5112403345868107899, guid: 6f34ef0d986e9db4199cf75805f79753, type: 3}
+  wrongClickEffect: {fileID: 4593184484909914550, guid: 2e1e9506f5904a64b81744324fb7cd50, type: 3}

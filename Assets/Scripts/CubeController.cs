@@ -77,7 +77,24 @@ public class CubeController : MonoBehaviour
         gameManager = manager;
         cubeColor = color;
         isInitialized = true;
+        isGoldenCube = false;
         
+        SetupRenderer();
+    }
+    
+    public void InitializeAsGolden(GameManager manager, Color color)
+    {
+        gameManager = manager;
+        cubeColor = color;
+        isInitialized = true;
+        isGoldenCube = true;
+        
+        SetupRenderer();
+        MakeGoldenCube();
+    }
+    
+    void SetupRenderer()
+    {
         if (cubeRenderer == null)
         {
             cubeRenderer = GetComponent<Renderer>();
@@ -118,24 +135,34 @@ public class CubeController : MonoBehaviour
             }
             cubeRenderer.material.color = cubeColor;
         }
-        
-        if (Random.Range(0f, 1f) < 0.05f)
-        {
-            MakeGoldenCube();
-        }
     }
     
     void MakeGoldenCube()
     {
-        isGoldenCube = true;
+        // Set golden cube to smaller scale
+        transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        
         if (cubeRenderer != null && goldenMaterial != null)
         {
             cubeRenderer.material = goldenMaterial;
         }
         else if (cubeRenderer != null)
         {
-            cubeRenderer.material.color = Color.yellow;
+            // Create a bright golden color
+            cubeRenderer.material.color = new Color(1f, 0.8f, 0f, 1f);
+            
+            // Add emission to make it glow
+            if (cubeRenderer.material.HasProperty("_EmissionColor"))
+            {
+                cubeRenderer.material.EnableKeyword("_EMISSION");
+                cubeRenderer.material.SetColor("_EmissionColor", new Color(1f, 0.8f, 0f, 1f) * 0.5f);
+            }
         }
+    }
+    
+    public void SetFallSpeed(float newSpeed)
+    {
+        fallSpeed = newSpeed;
     }
     
     void OnMouseDown()
@@ -184,7 +211,7 @@ public class CubeController : MonoBehaviour
         
         var main = effect.main;
         main.startColor = tint;
-        main.startSize = 0.3f; // Reduce particle size
+        main.startSize = 0.3f;
         
         effect.Play();
         Destroy(effect.gameObject, 2f);
@@ -205,7 +232,7 @@ public class CubeController : MonoBehaviour
         
         var main = effect.main;
         main.startColor = tint;
-        main.startSize = 0.3f; // Reduce particle size
+        main.startSize = 0.3f;
         
         effect.Play();
         Destroy(effect.gameObject, 2f);

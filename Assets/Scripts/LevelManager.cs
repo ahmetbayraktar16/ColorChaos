@@ -21,7 +21,6 @@ public class LevelManager : MonoBehaviour
     public bool enableBossMode = false;
     
     [Header("Boss Mode Settings")]
-    public float bossColorChangeInterval = 1f;
     public float bossSpawnRate = 0.5f;
     public int bossLevelInterval = 10;
     
@@ -63,7 +62,7 @@ public class LevelManager : MonoBehaviour
         if (gameManager != null)
         {
             // Update GameManager settings
-            // Note: You'll need to add these properties to GameManager
+            // Note: GameManager now handles difficulty internally based on score
         }
     }
     
@@ -94,19 +93,16 @@ public class LevelManager : MonoBehaviour
     
     IEnumerator BossModeRoutine()
     {
-        // Boss mode: faster color changes and spawning
-        float originalColorChangeInterval = gameManager.colorChangeInterval;
+        // Boss mode: faster spawning
         float originalSpawnRate = currentSpawnRate;
         
         // Set boss mode settings
-        gameManager.colorChangeInterval = bossColorChangeInterval;
         currentSpawnRate = bossSpawnRate;
         
         // Boss mode lasts for 30 seconds
         yield return new WaitForSeconds(30f);
         
         // Restore normal settings
-        gameManager.colorChangeInterval = originalColorChangeInterval;
         currentSpawnRate = originalSpawnRate;
     }
     
