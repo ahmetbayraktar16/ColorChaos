@@ -139,7 +139,6 @@ public class CubeController : MonoBehaviour
     
     void MakeGoldenCube()
     {
-        // Set golden cube to smaller scale
         transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         
         if (cubeRenderer != null && goldenMaterial != null)
@@ -148,10 +147,8 @@ public class CubeController : MonoBehaviour
         }
         else if (cubeRenderer != null)
         {
-            // Create a bright golden color
             cubeRenderer.material.color = new Color(1f, 0.8f, 0f, 1f);
             
-            // Add emission to make it glow
             if (cubeRenderer.material.HasProperty("_EmissionColor"))
             {
                 cubeRenderer.material.EnableKeyword("_EMISSION");
@@ -200,13 +197,11 @@ public class CubeController : MonoBehaviour
         
         Vector3 spawnPos = transform.position;
         
-        // Ensure effect spawns within screen bounds
         spawnPos.x = Mathf.Clamp(spawnPos.x, -4f, 4f);
         spawnPos.y = Mathf.Clamp(spawnPos.y, -4f, 4f);
         
         var effect = Instantiate(effectPrefab, spawnPos, Quaternion.identity);
         
-        // Scale down the effect to match cube size
         effect.transform.localScale = Vector3.one * 0.5f;
         
         var main = effect.main;
@@ -221,13 +216,11 @@ public class CubeController : MonoBehaviour
     {
         if (effectPrefab == null) return;
         
-        // Ensure effect spawns within screen bounds
         position.x = Mathf.Clamp(position.x, -4f, 4f);
         position.y = Mathf.Clamp(position.y, -4f, 4f);
         
         var effect = Instantiate(effectPrefab, position, Quaternion.identity);
         
-        // Scale down the effect to match cube size
         effect.transform.localScale = Vector3.one * 0.5f;
         
         var main = effect.main;
@@ -244,13 +237,11 @@ public class CubeController : MonoBehaviour
         {
             Vector3 spawnPos = transform.position;
             
-            // Ensure effect spawns within screen bounds
             spawnPos.x = Mathf.Clamp(spawnPos.x, -4f, 4f);
             spawnPos.y = Mathf.Clamp(spawnPos.y, -4f, 4f);
             
             ParticleSystem effect = Instantiate(destroyEffect, spawnPos, Quaternion.identity);
             
-            // Scale down the effect to match cube size
             effect.transform.localScale = Vector3.one * 0.5f;
             
             var main = effect.main;

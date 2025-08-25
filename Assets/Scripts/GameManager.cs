@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     
     [Header("Cube Spawning")]
     public GameObject cubePrefab;
-    public GameObject goldenCubePrefab; // New golden cube prefab
+    public GameObject goldenCubePrefab;
     public Transform spawnArea;
     public float baseSpawnRate = 2.5f;
     public int maxCubesOnScreen = 2;
@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
     public AudioClip correctClickSound;
     public AudioClip wrongClickSound;
     public AudioClip gameOverSound;
-    public AudioClip goldenCubeSound; // New sound for golden cube
     
     private int currentScore = 0;
     private int currentLives;
@@ -86,11 +85,10 @@ public class GameManager : MonoBehaviour
     
     void ChangeTargetColor()
     {
-        // Check if we should enter golden cube mode
         if (currentScore > 0 && currentScore % 50 == 0 && !isGoldenCubeMode)
         {
             isGoldenCubeMode = true;
-            lastTargetColor = targetColor; // Save the last target color
+            lastTargetColor = targetColor;
             
             if (uiManager != null)
             {
@@ -99,13 +97,11 @@ public class GameManager : MonoBehaviour
             return;
         }
         
-        // Don't change color if we're in golden cube mode
         if (isGoldenCubeMode)
         {
             return;
         }
         
-        // Normal color change
         int randomIndex = Random.Range(0, availableColors.Length);
         targetColor = availableColors[randomIndex];
         string targetColorName = colorNames[randomIndex];
@@ -118,7 +114,6 @@ public class GameManager : MonoBehaviour
     
     void UpdateDifficulty()
     {
-        // Update spawn rate based on score
         if (currentScore >= 100)
         {
             currentSpawnRate = 1.0f;
@@ -164,7 +159,6 @@ public class GameManager : MonoBehaviour
         
         Vector3 safeSpawnPosition = GetSafeSpawnPosition();
         
-        // Check if we should spawn a golden cube (every 50 points, but only once per score milestone)
         bool shouldSpawnGolden = (currentScore > 0 && currentScore % 50 == 0 && !hasSpawnedGoldenCubeThisScore);
         
         GameObject cubePrefabToUse = shouldSpawnGolden && goldenCubePrefab != null ? goldenCubePrefab : cubePrefab;
@@ -177,9 +171,8 @@ public class GameManager : MonoBehaviour
             if (shouldSpawnGolden)
             {
                 cubeController.InitializeAsGolden(this, GetRandomColor());
-                hasSpawnedGoldenCubeThisScore = true; // Mark that we've spawned a golden cube for this score
+                hasSpawnedGoldenCubeThisScore = true;
                 
-                // Update target color text to show "ALTIN KÜPE TIKLA"
                 if (uiManager != null)
                 {
                     uiManager.UpdateGameUI(currentScore, currentLives, "ALTIN KÜPE TIKLA");
@@ -190,7 +183,6 @@ public class GameManager : MonoBehaviour
                 cubeController.Initialize(this, GetRandomColor());
             }
             
-            // Set fall speed based on current difficulty
             cubeController.SetFallSpeed(currentFallSpeed);
         }
     }
@@ -209,7 +201,6 @@ public class GameManager : MonoBehaviour
             return new Vector3(centerX, spawnY, 0f);
         }
         
-        // Create a grid of possible spawn positions
         List<Vector3> possiblePositions = new List<Vector3>();
         
         for (float x = minX; x <= maxX; x += 1.2f)
@@ -220,7 +211,6 @@ public class GameManager : MonoBehaviour
             }
         }
         
-        // Shuffle the positions
         for (int i = 0; i < possiblePositions.Count; i++)
         {
             Vector3 temp = possiblePositions[i];
@@ -229,7 +219,6 @@ public class GameManager : MonoBehaviour
             possiblePositions[randomIndex] = temp;
         }
         
-        // Check each position for safety
         foreach (Vector3 testPosition in possiblePositions)
         {
             bool isSafe = true;
@@ -253,7 +242,6 @@ public class GameManager : MonoBehaviour
             }
         }
         
-        // If no safe position found, try to find one with minimal overlap
         float bestX = Random.Range(minX, maxX);
         float bestY = Random.Range(5f, 8f);
         float minOverlap = float.MaxValue;
@@ -299,29 +287,22 @@ public class GameManager : MonoBehaviour
         
         if (cube.CubeColor == targetColor || (isGoldenCubeMode && cube.isGoldenCube))
         {
-            // Base score for correct click
             currentScore += 10;
             
-            // Bonus for golden cube
             if (cube.isGoldenCube)
             {
-                currentScore += 20; // +20 puan for golden cube
-                PlaySound(goldenCubeSound);
+                currentScore += 20;
                 
-                // Add life if below max
                 if (currentLives < maxLives)
                 {
                     currentLives++;
                 }
                 
-                // Exit golden cube mode and return to normal gameplay
                 isGoldenCubeMode = false;
                 hasSpawnedGoldenCubeThisScore = false;
                 
-                // Return to last target color or random color
                 if (Random.Range(0f, 1f) < 0.5f)
                 {
-                    // 50% chance to return to last color
                     targetColor = lastTargetColor;
                     string lastColorName = "";
                     for (int i = 0; i < availableColors.Length; i++)
@@ -339,25 +320,20 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
-                    // 50% chance to get random color
                     ChangeTargetColor();
                 }
             }
             else
             {
-                // Normal cube clicked
                 PlaySound(correctClickSound);
                 cube.PlayEffectCorrect();
                 
-                // Check if we've passed a 50-point milestone and reset golden cube flag
                 if (currentScore % 50 == 0)
                 {
                     hasSpawnedGoldenCubeThisScore = false;
                 }
                 
-                // Update difficulty based on new score
                 UpdateDifficulty();
-                
                 ChangeTargetColor();
             }
         }
@@ -366,6 +342,13 @@ public class GameManager : MonoBehaviour
             currentLives--;
             PlaySound(wrongClickSound);
             cube.PlayEffectWrong();
+            
+            if (PlayerPrefs.GetInt("Vibration", 1) == 1)
+            {
+                #if UNITY_ANDROID
+                    Handheld.Vibrate();
+                #endif
+            }
             
             if (uiManager != null)
             {
@@ -392,6 +375,13 @@ public class GameManager : MonoBehaviour
             currentLives--;
             PlaySound(wrongClickSound);
             
+            if (PlayerPrefs.GetInt("Vibration", 1) == 1)
+            {
+                #if UNITY_ANDROID
+                    Handheld.Vibrate();
+                #endif
+            }
+            
             if (uiManager != null)
             {
                 uiManager.PlayLifeLossEffect();
@@ -403,16 +393,13 @@ public class GameManager : MonoBehaviour
                 return;
             }
             
-            // If golden cube was missed, exit golden cube mode
             if (isGoldenCubeMode && cube.isGoldenCube)
             {
                 isGoldenCubeMode = false;
                 hasSpawnedGoldenCubeThisScore = false;
                 
-                // Return to last target color or random color
                 if (Random.Range(0f, 1f) < 0.5f)
                 {
-                    // 50% chance to return to last color
                     targetColor = lastTargetColor;
                     string lastColorName = "";
                     for (int i = 0; i < availableColors.Length; i++)
@@ -430,7 +417,6 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
-                    // 50% chance to get random color
                     ChangeTargetColor();
                 }
             }

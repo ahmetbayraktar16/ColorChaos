@@ -10,7 +10,6 @@ public class UIManager : MonoBehaviour
     public AudioSource backgroundMusicSource;
     public AudioSource sfxAudioSource;
     public AudioClip buttonClickSound;
-    public AudioClip panelSwitchSound;
     
     [Header("Menu Panels")]
     public GameObject mainMenuPanel;
@@ -64,18 +63,10 @@ public class UIManager : MonoBehaviour
     {
         gameManager = FindFirstObjectByType<GameManager>();
         SetupUI();
+        LoadSettings();
         ShowMainMenu();
         UpdateHeartsDisplay(maxHearts);
         
-        // Debug audio sources
-        Debug.Log($"backgroundMusicSource: {(backgroundMusicSource != null ? "Assigned" : "NULL")}");
-        if (backgroundMusicSource != null)
-        {
-            Debug.Log($"backgroundMusicSource.clip: {(backgroundMusicSource.clip != null ? backgroundMusicSource.clip.name : "NULL")}");
-            Debug.Log($"backgroundMusicSource.volume: {backgroundMusicSource.volume}");
-        }
-        
-        // Start background music at the beginning
         StartBackgroundMusic();
     }
     
@@ -154,16 +145,13 @@ public class UIManager : MonoBehaviour
     
     public void ShowGameOver(int finalScore)
     {
-        // Pause background music during game over
         PauseBackgroundMusic();
         
-        // Hide all panels first
         if (mainMenuPanel != null) mainMenuPanel.SetActive(false);
         if (gamePanel != null) gamePanel.SetActive(false);
         if (settingsPanel != null) settingsPanel.SetActive(false);
         if (scorePanel != null) scorePanel.SetActive(false);
         
-        // Show only game over panel
         if (gameOverPanel != null)
         {
             gameOverPanel.SetActive(true);
@@ -197,7 +185,6 @@ public class UIManager : MonoBehaviour
         PlayButtonClickSound();
         SetActivePanel(settingsPanel);
         LoadSettings();
-        // Keep music playing in settings
     }
     
     public void ShowScore()
@@ -205,7 +192,6 @@ public class UIManager : MonoBehaviour
         PlayButtonClickSound();
         SetActivePanel(scorePanel);
         LoadScoreData();
-        // Keep music playing in score panel
     }
     
     void SetActivePanel(GameObject activePanel)
@@ -228,7 +214,6 @@ public class UIManager : MonoBehaviour
         {
             targetColorText.text = targetColor;
             
-            // Set text color based on target color
             if (!string.IsNullOrEmpty(targetColor))
             {
                 Color textColor = GetColorFromName(targetColor);
@@ -244,14 +229,14 @@ public class UIManager : MonoBehaviour
         switch (colorName.ToUpper())
         {
             case "KIRMIZI": return Color.red;
-            case "MAVİ": return new Color(0f, 0.4f, 1f); // Bright blue like the cube
+            case "MAVİ": return new Color(0f, 0.4f, 1f);
             case "YEŞİL": return Color.green;
             case "PEMBE": return new Color(1f, 0.2f, 0.6f);
             case "MOR": return new Color(0.6f, 0f, 0.8f);
             case "TURUNCU": return new Color(1f, 0.5f, 0f);
             case "SARİ": return Color.yellow;
             case "KAHVERENGİ": return new Color(0.4f, 0.2f, 0f);
-            case "ALTIN KÜPE TIKLA": return new Color(1f, 0.8f, 0f); // Golden color for the instruction
+            case "ALTIN KÜPE TIKLA": return new Color(1f, 0.8f, 0f);
             default: return Color.white;
         }
     }
@@ -342,7 +327,6 @@ public class UIManager : MonoBehaviour
     public void ShareScore()
     {
         PlayButtonClickSound();
-        Debug.Log("Share Score");
     }
     
     void LoadSettings()
@@ -356,7 +340,6 @@ public class UIManager : MonoBehaviour
         if (vibrationToggle != null)
             vibrationToggle.isOn = PlayerPrefs.GetInt("Vibration", 1) == 1;
             
-        // Apply loaded settings
         ApplyAudioSettings();
     }
     
@@ -388,36 +371,15 @@ public class UIManager : MonoBehaviour
             sfxAudioSource.volume = value;
     }
     
-    public void StartBackgroundMusic()
+        public void StartBackgroundMusic()
     {
-        Debug.Log("StartBackgroundMusic called");
-        
-        if (backgroundMusicSource == null)
-        {
-            Debug.LogError("backgroundMusicSource is null! Please assign it in the inspector.");
-            return;
-        }
-        
-        if (backgroundMusicSource.clip == null)
-        {
-            Debug.LogError("backgroundMusicSource.clip is null! Please assign an audio clip.");
-            return;
-        }
+        if (backgroundMusicSource == null || backgroundMusicSource.clip == null) return;
         
         if (!backgroundMusicSource.isPlaying)
         {
-            // Resume from saved position or start from beginning
             float savedTime = PlayerPrefs.GetFloat("MusicTime", 0f);
-            Debug.Log($"Starting music from time: {savedTime}");
-            
             backgroundMusicSource.time = savedTime;
             backgroundMusicSource.Play();
-            
-            Debug.Log($"Music started. Is playing: {backgroundMusicSource.isPlaying}, Volume: {backgroundMusicSource.volume}");
-        }
-        else
-        {
-            Debug.Log("Music is already playing");
         }
     }
     
@@ -425,8 +387,7 @@ public class UIManager : MonoBehaviour
     {
         if (backgroundMusicSource != null && backgroundMusicSource.isPlaying)
         {
-            // Save current position before pausing
-            PlayerPrefs.SetFloat("MusicTime", backgroundMusicSource.time);
+                    PlayerPrefs.SetFloat("MusicTime", backgroundMusicSource.time);
             backgroundMusicSource.Pause();
         }
     }
@@ -435,8 +396,7 @@ public class UIManager : MonoBehaviour
     {
         if (backgroundMusicSource != null)
         {
-            // Save current position before stopping
-            PlayerPrefs.SetFloat("MusicTime", backgroundMusicSource.time);
+                    PlayerPrefs.SetFloat("MusicTime", backgroundMusicSource.time);
             backgroundMusicSource.Stop();
         }
     }
@@ -455,12 +415,9 @@ public class UIManager : MonoBehaviour
     {
         if (sfxAudioSource != null && clip != null)
         {
-            // Get current SFX volume from PlayerPrefs
-            float sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
-            sfxAudioSource.volume = sfxVolume;
-            
-            // Play the sound
-            sfxAudioSource.PlayOneShot(clip);
+                    float sfxVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
+        sfxAudioSource.volume = sfxVolume;
+        sfxAudioSource.PlayOneShot(clip);
         }
     }
     
@@ -469,12 +426,7 @@ public class UIManager : MonoBehaviour
         PlayUISound(buttonClickSound);
     }
     
-    public void PlayPanelSwitchSound()
-    {
-        PlayUISound(panelSwitchSound);
-    }
-    
-    void OnVibrationChanged(bool enabled)
+    public void OnVibrationChanged(bool enabled)
     {
         PlayerPrefs.SetInt("Vibration", enabled ? 1 : 0);
     }
@@ -486,12 +438,9 @@ public class UIManager : MonoBehaviour
         if (sfxSlider != null) sfxSlider.value = 1f;
         if (vibrationToggle != null) vibrationToggle.isOn = true;
         
-        // Reset PlayerPrefs
         PlayerPrefs.SetFloat("MusicVolume", 1f);
         PlayerPrefs.SetFloat("SFXVolume", 1f);
         PlayerPrefs.SetInt("Vibration", 1);
-        
-        // Apply reset settings immediately
         ApplyAudioSettings();
     }
     

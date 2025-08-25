@@ -1660,7 +1660,6 @@ MonoBehaviour:
   backgroundMusicSource: {fileID: 207072885}
   sfxAudioSource: {fileID: 2088014308}
   buttonClickSound: {fileID: 8300000, guid: 56616a29188e0ab4d81f4f3dcb9d3d18, type: 3}
-  panelSwitchSound: {fileID: 8300000, guid: 639e886a2cfee0a44a34a1156d05edec, type: 3}
   mainMenuPanel: {fileID: 1409824177}
   gamePanel: {fileID: 1163171384}
   gameOverPanel: {fileID: 849643636}
@@ -1748,7 +1747,6 @@ MonoBehaviour:
   correctClickSound: {fileID: 8300000, guid: 62a2d294e378aed43a6a88b062018161, type: 3}
   wrongClickSound: {fileID: 8300000, guid: 46ba6d1c6cc5f7144b5d416b1f29834a, type: 3}
   gameOverSound: {fileID: 8300000, guid: b9a8c82dcfcbbbd429488842882fe84b, type: 3}
-  goldenCubeSound: {fileID: 0}
 --- !u!1 &625336368
 GameObject:
   m_ObjectHideFlags: 0
@@ -3941,63 +3939,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &909373358
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 909373359}
-  - component: {fileID: 909373360}
-  m_Layer: 0
-  m_Name: LevelManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &909373359
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 909373358}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &909373360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 909373358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecb0e79c3c20d2243bc054f18a8e5a27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentLevel: 1
-  baseSpawnRate: 2
-  baseFallSpeed: 3
-  baseMaxCubes: 2
-  speedMultiplier: 1.5
-  spawnRateMultiplier: 0.8
-  cubeIncreaseInterval: 5
-  enableGoldenCubes: 1
-  enableRotatingCubes: 0
-  enableBlinkingColors: 0
-  enableBossMode: 0
-  bossSpawnRate: 0.5
-  bossLevelInterval: 10
 --- !u!1 &932941682
 GameObject:
   m_ObjectHideFlags: 0
@@ -5308,7 +5249,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 549598774}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: OnVibrationChanged
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1 &1409824177
 GameObject:
@@ -7426,7 +7379,6 @@ SceneRoots:
   - {fileID: 1460541850}
   - {fileID: 617080557}
   - {fileID: 549598773}
-  - {fileID: 909373359}
   - {fileID: 1504990190}
   - {fileID: 791334608}
   - {fileID: 207072886}
