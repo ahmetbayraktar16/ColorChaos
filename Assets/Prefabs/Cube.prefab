@@ -103,7 +103,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -127,3 +127,4 @@ MonoBehaviour:
   goldenMaterial: {fileID: 2100000, guid: f7e9fd5a3cd3e514cbc840b0b49808d1, type: 2}
   correctClickEffect: {fileID: 5112403345868107899, guid: 6f34ef0d986e9db4199cf75805f79753, type: 3}
   wrongClickEffect: {fileID: 4593184484909914550, guid: 2e1e9506f5904a64b81744324fb7cd50, type: 3}
+  touchRadius: 1.5

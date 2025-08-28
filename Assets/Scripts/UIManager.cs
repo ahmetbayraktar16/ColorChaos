@@ -57,6 +57,11 @@ public class UIManager : MonoBehaviour
     public Button scoreBackButton;
     public Button resetProgressButton;
     
+    [Header("Share Popup")]
+    public GameObject sharePopupPanel;
+    public TextMeshProUGUI sharePopupText;
+    public Button sharePopupCloseButton;
+    
     private GameManager gameManager;
     
     void Start()
@@ -113,6 +118,9 @@ public class UIManager : MonoBehaviour
         
         if (resetProgressButton != null)
             resetProgressButton.onClick.AddListener(ResetProgress);
+            
+        if (sharePopupCloseButton != null)
+            sharePopupCloseButton.onClick.AddListener(CloseSharePopup);
     }
     
     public void ShowMainMenu()
@@ -151,6 +159,9 @@ public class UIManager : MonoBehaviour
         if (gamePanel != null) gamePanel.SetActive(false);
         if (settingsPanel != null) settingsPanel.SetActive(false);
         if (scorePanel != null) scorePanel.SetActive(false);
+        
+        // Hide share popup when showing game over
+        if (sharePopupPanel != null) sharePopupPanel.SetActive(false);
         
         if (gameOverPanel != null)
         {
@@ -202,6 +213,9 @@ public class UIManager : MonoBehaviour
         if (settingsPanel != null) settingsPanel.SetActive(false);
         if (scorePanel != null) scorePanel.SetActive(false);
         
+        // Hide share popup when switching panels
+        if (sharePopupPanel != null) sharePopupPanel.SetActive(false);
+        
         if (activePanel != null) activePanel.SetActive(true);
     }
     
@@ -234,7 +248,7 @@ public class UIManager : MonoBehaviour
             case "PEMBE": return new Color(1f, 0.2f, 0.6f);
             case "MOR": return new Color(0.6f, 0f, 0.8f);
             case "TURUNCU": return new Color(1f, 0.5f, 0f);
-            case "SARİ": return Color.yellow;
+            case "SARI": return Color.yellow;
             case "KAHVERENGİ": return new Color(0.4f, 0.2f, 0f);
             case "ALTIN KÜPE TIKLA": return new Color(1f, 0.8f, 0f);
             default: return Color.white;
@@ -327,6 +341,168 @@ public class UIManager : MonoBehaviour
     public void ShareScore()
     {
         PlayButtonClickSound();
+        
+        // Get current score from GameManager or ScoreManager
+        int currentScore = 0;
+        if (gameManager != null)
+        {
+            // Try to get score from GameManager first
+            currentScore = gameManager.GetCurrentScore();
+        }
+        
+        if (currentScore == 0)
+        {
+            // Fallback to ScoreManager
+            currentScore = ScoreManager.Instance != null ? ScoreManager.Instance.GetLastScore() : 0;
+        }
+        
+        // Create share message with additional context
+        string shareMessage = CreateShareMessage(currentScore);
+        
+        // Add sharing statistics
+        AddSharingStatistics();
+        
+        // Share the score
+        StartCoroutine(ShareScoreCoroutine(shareMessage));
+    }
+    
+    private void AddSharingStatistics()
+    {
+        // Track how many times player has shared
+        int shareCount = PlayerPrefs.GetInt("ShareCount", 0);
+        shareCount++;
+        PlayerPrefs.SetInt("ShareCount", shareCount);
+        PlayerPrefs.Save();
+        
+        // You could add achievements or rewards for sharing
+        if (shareCount == 1)
+        {
+            Debug.Log("İlk paylaşım! 🎉");
+        }
+        else if (shareCount == 5)
+        {
+            Debug.Log("5 kez paylaştın! 🌟");
+        }
+        else if (shareCount == 10)
+        {
+            Debug.Log("10 kez paylaştın! 🏆");
+        }
+    }
+    
+    private string CreateShareMessage(int score)
+    {
+        string gameName = "ColorChaos";
+        string message = $"🎮 {gameName} oyununda {score} puan aldım! 🎯\n\n";
+        
+        // Add motivational message based on score
+        if (score >= 100)
+            message += "Harika bir skor! Sen de bu seviyeye ulaşabilir misin? 🚀\n";
+        else if (score >= 50)
+            message += "İyi gidiyorsun! Daha da iyisini yapabilirsin! 💪\n";
+        else if (score >= 25)
+            message += "Güzel başlangıç! Pratik yaparak geliş! 🌟\n";
+        else
+            message += "Her oyun bir öğrenme fırsatı! Tekrar dene! 🎯\n";
+            
+        message += "\n#ColorChaos #MobileGame #Puzzle #Gaming";
+        
+        return message;
+    }
+    
+    private System.Collections.IEnumerator ShareScoreCoroutine(string message)
+    {
+        // Wait for end of frame to ensure UI is updated
+        yield return new WaitForEndOfFrame();
+        
+        Debug.Log("Platform: " + Application.platform);
+        
+        // Platform kontrolü
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            Debug.Log("Android platform tespit edildi, native sharing başlatılıyor...");
+            ShareScoreAndroid(message);
+        }
+        else
+        {
+            Debug.Log("PC/Editor platform tespit edildi, standalone sharing başlatılıyor...");
+            ShareScoreStandalone(message);
+        }
+    }
+    
+    private void ShareScoreAndroid(string message)
+    {
+        try
+        {
+            Debug.Log("Android sharing başlatılıyor...");
+            
+            // Android Intent sınıflarını al
+            AndroidJavaClass intentClass = new AndroidJavaClass("android.content.Intent");
+            AndroidJavaObject intent = new AndroidJavaObject("android.content.Intent");
+            
+            // Intent'i yapılandır
+            intent.Call<AndroidJavaObject>("setAction", intentClass.GetStatic<string>("ACTION_SEND"));
+            intent.Call<AndroidJavaObject>("setType", "text/plain");
+            intent.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_TEXT"), message);
+            
+            // Unity Player'dan current activity'yi al
+            AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+            AndroidJavaObject currentActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
+            
+            if (currentActivity != null)
+            {
+                // Chooser oluştur ve paylaşımı başlat
+                AndroidJavaObject chooser = intentClass.CallStatic<AndroidJavaObject>("createChooser", intent, "Puanını Paylaş");
+                currentActivity.Call("startActivity", chooser);
+                Debug.Log("Android sharing başarıyla başlatıldı!");
+            }
+            else
+            {
+                Debug.LogError("Current activity bulunamadı!");
+                ShareScoreStandalone(message);
+            }
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError("Android sharing failed: " + e.Message);
+            Debug.LogError("Stack trace: " + e.StackTrace);
+            ShareScoreStandalone(message);
+        }
+    }
+    
+
+    
+    private void ShareScoreStandalone(string message)
+    {
+        // Fallback for editor and standalone builds
+        // Copy to clipboard and show message
+        UnityEngine.GUIUtility.systemCopyBuffer = message;
+        
+        // Show a simple popup or use Unity's built-in dialog
+        #if UNITY_EDITOR
+            UnityEditor.EditorUtility.DisplayDialog("Puan Paylaşıldı", 
+                "Puan mesajı panoya kopyalandı!\n\n" + message, "Tamam");
+        #else
+            // For standalone builds, show custom UI popup
+            ShowSharePopup("Puan mesajı panoya kopyalandı!\n\n" + message);
+        #endif
+    }
+    
+    private void ShowSharePopup(string message)
+    {
+        if (sharePopupPanel != null)
+        {
+            if (sharePopupText != null)
+                sharePopupText.text = message;
+            sharePopupPanel.SetActive(true);
+        }
+    }
+    
+    private void CloseSharePopup()
+    {
+        if (sharePopupPanel != null)
+        {
+            sharePopupPanel.SetActive(false);
+        }
     }
     
     void LoadSettings()

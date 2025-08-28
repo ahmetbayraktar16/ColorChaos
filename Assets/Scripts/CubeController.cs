@@ -13,10 +13,14 @@ public class CubeController : MonoBehaviour
     public ParticleSystem correctClickEffect;
     public ParticleSystem wrongClickEffect;
     
+    [Header("Touch Detection")]
+    public float touchRadius = 1.5f; // Increased for better touch detection
+    
     private GameManager gameManager;
     private Color cubeColor;
     private bool isInitialized = false;
     private Renderer cubeRenderer;
+    private Camera mainCamera;
     
     public Color CubeColor => cubeColor;
     
@@ -26,6 +30,12 @@ public class CubeController : MonoBehaviour
         if (cubeRenderer == null)
         {
             cubeRenderer = GetComponentInChildren<Renderer>();
+        }
+        
+        mainCamera = Camera.main;
+        if (mainCamera == null)
+        {
+            mainCamera = FindFirstObjectByType<Camera>();
         }
     }
     
@@ -45,31 +55,65 @@ public class CubeController : MonoBehaviour
             return;
         }
         
-        if (Mouse.current.leftButton.wasPressedThisFrame)
+        // Check for mouse input (PC)
+        if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
         {
-            if (Camera.main == null) return;
-            
-            Vector3 mousePosition = Mouse.current.position.ReadValue();
-            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, 10f));
-            
-            if (Vector3.Distance(transform.position, worldPosition) < 1f)
-            {
-                OnMouseDown();
-            }
+            CheckMouseClick();
         }
         
-        if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.isPressed)
+        // Check for touch input (Mobile)
+        if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.wasPressedThisFrame)
         {
-            if (Camera.main == null) return;
-            
-            Vector2 touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
-            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(new Vector3(touchPosition.x, touchPosition.y, 10f));
-            
-            if (Vector3.Distance(transform.position, worldPosition) < 1f)
-            {
-                OnMouseDown();
-            }
+            CheckTouchInput();
         }
+    }
+    
+    void CheckMouseClick()
+    {
+        if (mainCamera == null) return;
+        
+        Vector3 mousePosition = Mouse.current.position.ReadValue();
+        Vector3 worldPosition = mainCamera.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, 10f));
+        
+        float distance = Vector3.Distance(transform.position, worldPosition);
+        Debug.Log($"Mouse click at {mousePosition}, world pos: {worldPosition}, cube pos: {transform.position}, distance: {distance}, touchRadius: {touchRadius}");
+        
+        if (distance < touchRadius)
+        {
+            Debug.Log("Cube clicked via mouse!");
+            OnCubeClicked();
+        }
+    }
+    
+    void CheckTouchInput()
+    {
+        if (mainCamera == null) return;
+        
+        Vector2 touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
+        Vector3 worldPosition = mainCamera.ScreenToWorldPoint(new Vector3(touchPosition.x, touchPosition.y, 10f));
+        
+        float distance = Vector3.Distance(transform.position, worldPosition);
+        Debug.Log($"Touch detected at {touchPosition}, world pos: {worldPosition}, cube pos: {transform.position}, distance: {distance}, touchRadius: {touchRadius}");
+        
+        if (distance < touchRadius)
+        {
+            Debug.Log("Cube clicked via touch!");
+            OnCubeClicked();
+        }
+    }
+    
+    void OnCubeClicked()
+    {
+        if (gameManager != null)
+        {
+            gameManager.OnCubeClicked(this);
+        }
+    }
+    
+    // Legacy mouse input for compatibility
+    void OnMouseDown()
+    {
+        OnCubeClicked();
     }
     
     public void Initialize(GameManager manager, Color color)
@@ -160,14 +204,6 @@ public class CubeController : MonoBehaviour
     public void SetFallSpeed(float newSpeed)
     {
         fallSpeed = newSpeed;
-    }
-    
-    void OnMouseDown()
-    {
-        if (gameManager != null)
-        {
-            gameManager.OnCubeClicked(this);
-        }
     }
     
     void OnTriggerEnter2D(Collider2D other)

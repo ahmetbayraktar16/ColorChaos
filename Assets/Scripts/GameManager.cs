@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
 
     private string[] colorNames = { 
         "KIRMIZI", "MAVİ", "YEŞİL", "PEMBE",
-        "TURUNCU", "SARİ", "KAHVERENGİ"
+        "TURUNCU", "SARI", "KAHVERENGİ"
     };
     
     private Color lastTargetColor;
@@ -521,5 +521,10 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         InitializeGame();
+    }
+    
+    public int GetCurrentScore()
+    {
+        return currentScore;
     }
 }
