@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
-using System.Collections;
 
 public class UIManager : MonoBehaviour
 {
@@ -32,9 +31,6 @@ public class UIManager : MonoBehaviour
     public GameObject heartPrefab;
     public RectTransform heartsParent;
     public ParticleSystem lifeLossEffect;
-    public bool use3DHearts = true;
-    public Vector3 heartScale = new Vector3(0.4f, 0.4f, 0.4f);
-    public float heartSpacing = 80f;
     public int maxHearts = 3;
     
     [Header("Game Over UI")]
@@ -47,7 +43,6 @@ public class UIManager : MonoBehaviour
     [Header("Settings UI")]
     public Slider musicSlider;
     public Slider sfxSlider;
-    public Toggle vibrationToggle;
     public Button backButton;
     public Button resetButton;
     
@@ -57,12 +52,8 @@ public class UIManager : MonoBehaviour
     public Button scoreBackButton;
     public Button resetProgressButton;
     
-    [Header("Share Popup")]
-    public GameObject sharePopupPanel;
-    public TextMeshProUGUI sharePopupText;
-    public Button sharePopupCloseButton;
-    
     private GameManager gameManager;
+    private bool isSharing = false;
     
     void Start()
     {
@@ -110,17 +101,11 @@ public class UIManager : MonoBehaviour
         if (sfxSlider != null)
             sfxSlider.onValueChanged.AddListener(OnSFXVolumeChanged);
         
-        if (vibrationToggle != null)
-            vibrationToggle.onValueChanged.AddListener(OnVibrationChanged);
-        
         if (scoreBackButton != null)
             scoreBackButton.onClick.AddListener(ShowMainMenu);
         
         if (resetProgressButton != null)
             resetProgressButton.onClick.AddListener(ResetProgress);
-            
-        if (sharePopupCloseButton != null)
-            sharePopupCloseButton.onClick.AddListener(CloseSharePopup);
     }
     
     public void ShowMainMenu()
@@ -159,9 +144,6 @@ public class UIManager : MonoBehaviour
         if (gamePanel != null) gamePanel.SetActive(false);
         if (settingsPanel != null) settingsPanel.SetActive(false);
         if (scorePanel != null) scorePanel.SetActive(false);
-        
-        // Hide share popup when showing game over
-        if (sharePopupPanel != null) sharePopupPanel.SetActive(false);
         
         if (gameOverPanel != null)
         {
@@ -212,9 +194,6 @@ public class UIManager : MonoBehaviour
         if (gameOverPanel != null) gameOverPanel.SetActive(false);
         if (settingsPanel != null) settingsPanel.SetActive(false);
         if (scorePanel != null) scorePanel.SetActive(false);
-        
-        // Hide share popup when switching panels
-        if (sharePopupPanel != null) sharePopupPanel.SetActive(false);
         
         if (activePanel != null) activePanel.SetActive(true);
     }
@@ -340,53 +319,35 @@ public class UIManager : MonoBehaviour
     
     public void ShareScore()
     {
-        PlayButtonClickSound();
+        if (isSharing) return;
         
-        // Get current score from GameManager or ScoreManager
+        PlayButtonClickSound();
+        isSharing = true;
+        
         int currentScore = 0;
         if (gameManager != null)
         {
-            // Try to get score from GameManager first
             currentScore = gameManager.GetCurrentScore();
         }
         
         if (currentScore == 0)
         {
-            // Fallback to ScoreManager
             currentScore = ScoreManager.Instance != null ? ScoreManager.Instance.GetLastScore() : 0;
         }
         
-        // Create share message with additional context
         string shareMessage = CreateShareMessage(currentScore);
         
-        // Add sharing statistics
         AddSharingStatistics();
         
-        // Share the score
         StartCoroutine(ShareScoreCoroutine(shareMessage));
     }
     
     private void AddSharingStatistics()
     {
-        // Track how many times player has shared
         int shareCount = PlayerPrefs.GetInt("ShareCount", 0);
         shareCount++;
         PlayerPrefs.SetInt("ShareCount", shareCount);
         PlayerPrefs.Save();
-        
-        // You could add achievements or rewards for sharing
-        if (shareCount == 1)
-        {
-            Debug.Log("İlk paylaşım! 🎉");
-        }
-        else if (shareCount == 5)
-        {
-            Debug.Log("5 kez paylaştın! 🌟");
-        }
-        else if (shareCount == 10)
-        {
-            Debug.Log("10 kez paylaştın! 🏆");
-        }
     }
     
     private string CreateShareMessage(int score)
@@ -394,7 +355,6 @@ public class UIManager : MonoBehaviour
         string gameName = "ColorChaos";
         string message = $"🎮 {gameName} oyununda {score} puan aldım! 🎯\n\n";
         
-        // Add motivational message based on score
         if (score >= 100)
             message += "Harika bir skor! Sen de bu seviyeye ulaşabilir misin? 🚀\n";
         else if (score >= 50)
@@ -411,98 +371,55 @@ public class UIManager : MonoBehaviour
     
     private System.Collections.IEnumerator ShareScoreCoroutine(string message)
     {
-        // Wait for end of frame to ensure UI is updated
         yield return new WaitForEndOfFrame();
         
-        Debug.Log("Platform: " + Application.platform);
-        
-        // Platform kontrolü
         if (Application.platform == RuntimePlatform.Android)
         {
-            Debug.Log("Android platform tespit edildi, native sharing başlatılıyor...");
             ShareScoreAndroid(message);
         }
         else
         {
-            Debug.Log("PC/Editor platform tespit edildi, standalone sharing başlatılıyor...");
             ShareScoreStandalone(message);
         }
     }
     
     private void ShareScoreAndroid(string message)
     {
-        try
+        AndroidJavaClass intentClass = new AndroidJavaClass("android.content.Intent");
+        AndroidJavaObject intent = new AndroidJavaObject("android.content.Intent");
+        
+        intent.Call<AndroidJavaObject>("setAction", intentClass.GetStatic<string>("ACTION_SEND"));
+        intent.Call<AndroidJavaObject>("setType", "text/plain");
+        intent.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_TEXT"), message);
+        
+        AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+        AndroidJavaObject currentActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
+        
+        if (currentActivity != null)
         {
-            Debug.Log("Android sharing başlatılıyor...");
-            
-            // Android Intent sınıflarını al
-            AndroidJavaClass intentClass = new AndroidJavaClass("android.content.Intent");
-            AndroidJavaObject intent = new AndroidJavaObject("android.content.Intent");
-            
-            // Intent'i yapılandır
-            intent.Call<AndroidJavaObject>("setAction", intentClass.GetStatic<string>("ACTION_SEND"));
-            intent.Call<AndroidJavaObject>("setType", "text/plain");
-            intent.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_TEXT"), message);
-            
-            // Unity Player'dan current activity'yi al
-            AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
-            AndroidJavaObject currentActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
-            
-            if (currentActivity != null)
-            {
-                // Chooser oluştur ve paylaşımı başlat
-                AndroidJavaObject chooser = intentClass.CallStatic<AndroidJavaObject>("createChooser", intent, "Puanını Paylaş");
-                currentActivity.Call("startActivity", chooser);
-                Debug.Log("Android sharing başarıyla başlatıldı!");
-            }
-            else
-            {
-                Debug.LogError("Current activity bulunamadı!");
-                ShareScoreStandalone(message);
-            }
+            AndroidJavaObject chooser = intentClass.CallStatic<AndroidJavaObject>("createChooser", intent, "Puanını Paylaş");
+            currentActivity.Call("startActivity", chooser);
         }
-        catch (System.Exception e)
+        else
         {
-            Debug.LogError("Android sharing failed: " + e.Message);
-            Debug.LogError("Stack trace: " + e.StackTrace);
             ShareScoreStandalone(message);
         }
+        
+        isSharing = false;
     }
-    
-
     
     private void ShareScoreStandalone(string message)
     {
-        // Fallback for editor and standalone builds
-        // Copy to clipboard and show message
         UnityEngine.GUIUtility.systemCopyBuffer = message;
         
-        // Show a simple popup or use Unity's built-in dialog
         #if UNITY_EDITOR
             UnityEditor.EditorUtility.DisplayDialog("Puan Paylaşıldı", 
                 "Puan mesajı panoya kopyalandı!\n\n" + message, "Tamam");
         #else
-            // For standalone builds, show custom UI popup
-            ShowSharePopup("Puan mesajı panoya kopyalandı!\n\n" + message);
+            Debug.Log("Puan mesajı panoya kopyalandı: " + message);
         #endif
-    }
-    
-    private void ShowSharePopup(string message)
-    {
-        if (sharePopupPanel != null)
-        {
-            if (sharePopupText != null)
-                sharePopupText.text = message;
-            sharePopupPanel.SetActive(true);
-        }
-    }
-    
-    private void CloseSharePopup()
-    {
-        if (sharePopupPanel != null)
-        {
-            sharePopupPanel.SetActive(false);
-        }
+        
+        isSharing = false;
     }
     
     void LoadSettings()
@@ -513,9 +430,6 @@ public class UIManager : MonoBehaviour
         if (sfxSlider != null)
             sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume", 1f);
         
-        if (vibrationToggle != null)
-            vibrationToggle.isOn = PlayerPrefs.GetInt("Vibration", 1) == 1;
-            
         ApplyAudioSettings();
     }
     
@@ -602,21 +516,14 @@ public class UIManager : MonoBehaviour
         PlayUISound(buttonClickSound);
     }
     
-    public void OnVibrationChanged(bool enabled)
-    {
-        PlayerPrefs.SetInt("Vibration", enabled ? 1 : 0);
-    }
-    
     public void ResetSettings()
     {
         PlayButtonClickSound();
         if (musicSlider != null) musicSlider.value = 1f;
         if (sfxSlider != null) sfxSlider.value = 1f;
-        if (vibrationToggle != null) vibrationToggle.isOn = true;
         
         PlayerPrefs.SetFloat("MusicVolume", 1f);
         PlayerPrefs.SetFloat("SFXVolume", 1f);
-        PlayerPrefs.SetInt("Vibration", 1);
         ApplyAudioSettings();
     }
     

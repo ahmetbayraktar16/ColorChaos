@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
 {
     [Header("Game Settings")]
     public int maxLives = 3;
-    public float wrongClickPenalty = 1f;
     
     [Header("UI References")]
     public UIManager uiManager;
@@ -31,7 +30,6 @@ public class GameManager : MonoBehaviour
     private bool isGameActive = false;
     private float currentSpawnRate;
     private float currentFallSpeed = 2f;
-    private bool hasSpawnedGoldenCubeThisScore = false;
     
     private Color[] availableColors = {
         new Color(1f, 0f, 0f),     
@@ -50,6 +48,10 @@ public class GameManager : MonoBehaviour
     
     private Color lastTargetColor;
     private bool isGoldenCubeMode = false;
+    private bool hasSpawnedGoldenCubeThisLevel = false;
+    
+    private int cubesSinceLastTargetColor = 0;
+    private int maxCubesWithoutTargetColor = 5;
     
     void Start()
     {
@@ -75,8 +77,10 @@ public class GameManager : MonoBehaviour
         isGameActive = true;
         currentSpawnRate = baseSpawnRate;
         currentFallSpeed = 2f;
-        hasSpawnedGoldenCubeThisScore = false;
         isGoldenCubeMode = false;
+        hasSpawnedGoldenCubeThisLevel = false;
+        
+        cubesSinceLastTargetColor = 0;
         
         UpdateUI();
         ChangeTargetColor();
@@ -85,7 +89,7 @@ public class GameManager : MonoBehaviour
     
     void ChangeTargetColor()
     {
-        if (currentScore > 0 && currentScore % 50 == 0 && !isGoldenCubeMode)
+        if (currentScore > 0 && currentScore % 100 == 0 && !isGoldenCubeMode)
         {
             isGoldenCubeMode = true;
             lastTargetColor = targetColor;
@@ -140,7 +144,7 @@ public class GameManager : MonoBehaviour
             currentFallSpeed = 2f;
         }
     }
-    
+
     IEnumerator SpawnCubes()
     {
         while (isGameActive)
@@ -149,6 +153,7 @@ public class GameManager : MonoBehaviour
             {
                 SpawnCube();
             }
+            
             yield return new WaitForSeconds(currentSpawnRate);
         }
     }
@@ -156,12 +161,22 @@ public class GameManager : MonoBehaviour
     void SpawnCube()
     {
         if (cubePrefab == null || spawnArea == null) return;
+            
+        bool shouldSpawnGolden = (currentScore > 0 && currentScore % 100 == 0 && !hasSpawnedGoldenCubeThisLevel);
         
         Vector3 safeSpawnPosition = GetSafeSpawnPosition();
         
-        bool shouldSpawnGolden = (currentScore > 0 && currentScore % 50 == 0 && !hasSpawnedGoldenCubeThisScore);
+        GameObject cubePrefabToUse;
         
-        GameObject cubePrefabToUse = shouldSpawnGolden && goldenCubePrefab != null ? goldenCubePrefab : cubePrefab;
+        if (shouldSpawnGolden)
+        {
+            cubePrefabToUse = goldenCubePrefab != null ? goldenCubePrefab : cubePrefab;
+        }
+        else
+        {
+            cubePrefabToUse = cubePrefab;
+        }
+        
         GameObject cube = Instantiate(cubePrefabToUse, safeSpawnPosition, Quaternion.identity);
         
         CubeController cubeController = cube.GetComponent<CubeController>();
@@ -171,7 +186,7 @@ public class GameManager : MonoBehaviour
             if (shouldSpawnGolden)
             {
                 cubeController.InitializeAsGolden(this, GetRandomColor());
-                hasSpawnedGoldenCubeThisScore = true;
+                hasSpawnedGoldenCubeThisLevel = true; // Bu seviyede altın küp spawn edildi
                 
                 if (uiManager != null)
                 {
@@ -180,7 +195,20 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                cubeController.Initialize(this, GetRandomColor());
+                Color cubeColor;
+                
+                if (cubesSinceLastTargetColor >= maxCubesWithoutTargetColor)
+                {
+                    cubeColor = targetColor;
+                    cubesSinceLastTargetColor = 0; 
+                }
+                else
+                {
+                    cubeColor = GetRandomColor();
+                    cubesSinceLastTargetColor++;
+                }
+                
+                cubeController.Initialize(this, cubeColor);
             }
             
             cubeController.SetFallSpeed(currentFallSpeed);
@@ -191,21 +219,23 @@ public class GameManager : MonoBehaviour
     {
         float minX = -1.8f;
         float maxX = 1.8f;
-        float spawnY = Random.Range(5f, 8f);
+        float minY = 5f;
+        float maxY = 8f;
         
-        GameObject[] existingCubes = GameObject.FindGameObjectsWithTag("Cube");
+        GameObject[] allObjects = GameObject.FindGameObjectsWithTag("Cube");
         
-        if (existingCubes.Length == 0)
+        if (allObjects.Length == 0)
         {
-            float centerX = Random.Range(-1f, 1f);
-            return new Vector3(centerX, spawnY, 0f);
+            float centerX = Random.Range(-1.5f, 1.5f);
+            float centerY = Random.Range(6f, 7f);
+            return new Vector3(centerX, centerY, 0f);
         }
         
         List<Vector3> possiblePositions = new List<Vector3>();
         
-        for (float x = minX; x <= maxX; x += 1.2f)
+        for (float x = minX; x <= maxX; x += 0.8f)
         {
-            for (float y = 5f; y <= 8f; y += 1.5f)
+            for (float y = minY; y <= maxY; y += 1.0f)
             {
                 possiblePositions.Add(new Vector3(x, y, 0f));
             }
@@ -223,12 +253,12 @@ public class GameManager : MonoBehaviour
         {
             bool isSafe = true;
             
-            foreach (GameObject existingCube in existingCubes)
+            foreach (GameObject existingObject in allObjects)
             {
-                if (existingCube != null)
+                if (existingObject != null)
                 {
-                    float distance = Vector3.Distance(existingCube.transform.position, testPosition);
-                    if (distance < 2.0f)
+                    float distance = Vector3.Distance(existingObject.transform.position, testPosition);
+                    if (distance < 2.0f) 
                     {
                         isSafe = false;
                         break;
@@ -242,32 +272,29 @@ public class GameManager : MonoBehaviour
             }
         }
         
-        float bestX = Random.Range(minX, maxX);
-        float bestY = Random.Range(5f, 8f);
-        float minOverlap = float.MaxValue;
+        float bestX = Random.Range(-1.8f, 1.8f);
+        float bestY = Random.Range(6f, 7f);
+        float maxDistance = 0f;
         
-        for (int attempt = 0; attempt < 50; attempt++)
+        for (int attempt = 0; attempt < 30; attempt++)
         {
-            float testX = Random.Range(minX, maxX);
-            float testY = Random.Range(5f, 8f);
+            float testX = Random.Range(-1.8f, 1.8f);
+            float testY = Random.Range(6f, 7f);
             Vector3 testPos = new Vector3(testX, testY, 0f);
             
-            float totalOverlap = 0f;
-            foreach (GameObject existingCube in existingCubes)
+            float minDistance = float.MaxValue;
+            foreach (GameObject existingObject in allObjects)
             {
-                if (existingCube != null)
+                if (existingObject != null)
                 {
-                    float distance = Vector3.Distance(existingCube.transform.position, testPos);
-                    if (distance < 2.0f)
-                    {
-                        totalOverlap += (2.0f - distance);
-                    }
+                    float distance = Vector3.Distance(existingObject.transform.position, testPos);
+                    if (distance < minDistance) minDistance = distance;
                 }
             }
             
-            if (totalOverlap < minOverlap)
+            if (minDistance > maxDistance)
             {
-                minOverlap = totalOverlap;
+                maxDistance = minDistance;
                 bestX = testX;
                 bestY = testY;
             }
@@ -287,11 +314,10 @@ public class GameManager : MonoBehaviour
         
         if (cube.CubeColor == targetColor || (isGoldenCubeMode && cube.isGoldenCube))
         {
-            currentScore += 10;
-            
             if (cube.isGoldenCube)
             {
-                currentScore += 20;
+                int goldenScore = 20;
+                currentScore += goldenScore;
                 
                 if (currentLives < maxLives)
                 {
@@ -299,7 +325,7 @@ public class GameManager : MonoBehaviour
                 }
                 
                 isGoldenCubeMode = false;
-                hasSpawnedGoldenCubeThisScore = false;
+                hasSpawnedGoldenCubeThisLevel = false;
                 
                 if (Random.Range(0f, 1f) < 0.5f)
                 {
@@ -325,13 +351,11 @@ public class GameManager : MonoBehaviour
             }
             else
             {
+                int baseScore = 10;
+                currentScore += baseScore;
+                
                 PlaySound(correctClickSound);
                 cube.PlayEffectCorrect();
-                
-                if (currentScore % 50 == 0)
-                {
-                    hasSpawnedGoldenCubeThisScore = false;
-                }
                 
                 UpdateDifficulty();
                 ChangeTargetColor();
@@ -342,13 +366,6 @@ public class GameManager : MonoBehaviour
             currentLives--;
             PlaySound(wrongClickSound);
             cube.PlayEffectWrong();
-            
-            if (PlayerPrefs.GetInt("Vibration", 1) == 1)
-            {
-                #if UNITY_ANDROID
-                    Handheld.Vibrate();
-                #endif
-            }
             
             if (uiManager != null)
             {
@@ -375,13 +392,6 @@ public class GameManager : MonoBehaviour
             currentLives--;
             PlaySound(wrongClickSound);
             
-            if (PlayerPrefs.GetInt("Vibration", 1) == 1)
-            {
-                #if UNITY_ANDROID
-                    Handheld.Vibrate();
-                #endif
-            }
-            
             if (uiManager != null)
             {
                 uiManager.PlayLifeLossEffect();
@@ -396,7 +406,6 @@ public class GameManager : MonoBehaviour
             if (isGoldenCubeMode && cube.isGoldenCube)
             {
                 isGoldenCubeMode = false;
-                hasSpawnedGoldenCubeThisScore = false;
                 
                 if (Random.Range(0f, 1f) < 0.5f)
                 {
@@ -485,8 +494,10 @@ public class GameManager : MonoBehaviour
         isGameActive = false;
         currentSpawnRate = baseSpawnRate;
         currentFallSpeed = 2f;
-        hasSpawnedGoldenCubeThisScore = false;
         isGoldenCubeMode = false;
+        hasSpawnedGoldenCubeThisLevel = false;
+        
+        cubesSinceLastTargetColor = 0;
         
         GameObject[] existingCubes = GameObject.FindGameObjectsWithTag("Cube");
         foreach (GameObject cube in existingCubes)

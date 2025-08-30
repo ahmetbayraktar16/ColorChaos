@@ -14,7 +14,7 @@ public class CubeController : MonoBehaviour
     public ParticleSystem wrongClickEffect;
     
     [Header("Touch Detection")]
-    public float touchRadius = 1.5f; // Increased for better touch detection
+    public float touchRadius = 1.5f;
     
     private GameManager gameManager;
     private Color cubeColor;
@@ -55,13 +55,11 @@ public class CubeController : MonoBehaviour
             return;
         }
         
-        // Check for mouse input (PC)
         if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
         {
             CheckMouseClick();
         }
         
-        // Check for touch input (Mobile)
         if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.wasPressedThisFrame)
         {
             CheckTouchInput();
@@ -75,12 +73,8 @@ public class CubeController : MonoBehaviour
         Vector3 mousePosition = Mouse.current.position.ReadValue();
         Vector3 worldPosition = mainCamera.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, 10f));
         
-        float distance = Vector3.Distance(transform.position, worldPosition);
-        Debug.Log($"Mouse click at {mousePosition}, world pos: {worldPosition}, cube pos: {transform.position}, distance: {distance}, touchRadius: {touchRadius}");
-        
-        if (distance < touchRadius)
+        if (Vector3.Distance(transform.position, worldPosition) < touchRadius)
         {
-            Debug.Log("Cube clicked via mouse!");
             OnCubeClicked();
         }
     }
@@ -92,12 +86,8 @@ public class CubeController : MonoBehaviour
         Vector2 touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
         Vector3 worldPosition = mainCamera.ScreenToWorldPoint(new Vector3(touchPosition.x, touchPosition.y, 10f));
         
-        float distance = Vector3.Distance(transform.position, worldPosition);
-        Debug.Log($"Touch detected at {touchPosition}, world pos: {worldPosition}, cube pos: {transform.position}, distance: {distance}, touchRadius: {touchRadius}");
-        
-        if (distance < touchRadius)
+        if (Vector3.Distance(transform.position, worldPosition) < touchRadius)
         {
-            Debug.Log("Cube clicked via touch!");
             OnCubeClicked();
         }
     }
@@ -110,18 +100,15 @@ public class CubeController : MonoBehaviour
         }
     }
     
-    // Legacy mouse input for compatibility
-    void OnMouseDown()
-    {
-        OnCubeClicked();
-    }
-    
     public void Initialize(GameManager manager, Color color)
     {
         gameManager = manager;
         cubeColor = color;
         isInitialized = true;
         isGoldenCube = false;
+        
+        // Normal küpler için standart touch radius
+        touchRadius = 1.5f;
         
         SetupRenderer();
     }
@@ -132,6 +119,9 @@ public class CubeController : MonoBehaviour
         cubeColor = color;
         isInitialized = true;
         isGoldenCube = true;
+        
+        // Altın küpler için standart touch radius
+        touchRadius = 1.5f;
         
         SetupRenderer();
         MakeGoldenCube();
@@ -200,6 +190,8 @@ public class CubeController : MonoBehaviour
             }
         }
     }
+    
+
     
     public void SetFallSpeed(float newSpeed)
     {
